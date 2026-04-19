@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
+  <rect width="500" height="400" fill="#f5f7fa" rx="12" />
+
+  <!-- Треугольник ABC -->
+  <line x1="80" y1="320" x2="400" y2="320" stroke="#1E2321" stroke-width="2.5" />
+  <line x1="80" y1="320" x2="250" y2="100" stroke="#1E2321" stroke-width="2.5" />
+  <line x1="250" y1="100" x2="400" y2="320" stroke="#1E2321" stroke-width="2.5" />
+
+  <!-- Вершины -->
+  <circle cx="80" cy="320" r="5" fill="#7A9D8C" />
+  <text x="55" y="350" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#1E2321">A</text>
+
+  <circle cx="250" cy="100" r="5" fill="#7A9D8C" />
+  <text x="235" y="85" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#1E2321">B</text>
+
+  <circle cx="400" cy="320" r="5" fill="#7A9D8C" />
+  <text x="415" y="350" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#1E2321">C</text>
+
+  <!-- Обозначения сторон -->
+  <text x="230" y="345" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">a</text>
+  <text x="340" y="220" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">b</text>
+  <text x="140" y="220" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">c</text>
+
+  <!-- Неравенства -->
+  <text x="250" y="380" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#c2410c" text-anchor="middle">a + b &gt; c</text>
+  <text x="130" y="380" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#2563eb" text-anchor="middle">b + c &gt; a</text>
+  <text x="370" y="380" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#16a34a" text-anchor="middle">a + c &gt; b</text>
+
+  <!-- Формула -->
+  <text x="250" y="395" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#1E2321" text-anchor="middle">a + b &gt; c  •  a + c &gt; b  •  b + c &gt; a</text>
+</svg>

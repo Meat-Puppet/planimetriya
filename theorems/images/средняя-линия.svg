@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
+  <rect width="500" height="400" fill="#f5f7fa" rx="12" />
+
+  <!-- Треугольник ABC -->
+  <line x1="80" y1="330" x2="400" y2="330" stroke="#1E2321" stroke-width="2.5" />
+  <line x1="80" y1="330" x2="240" y2="100" stroke="#1E2321" stroke-width="2.5" />
+  <line x1="240" y1="100" x2="400" y2="330" stroke="#1E2321" stroke-width="2.5" />
+
+  <!-- Средняя линия MN -->
+  <line x1="160" y1="215" x2="320" y2="215" stroke="#c2410c" stroke-width="2.5" />
+
+  <!-- Вершины -->
+  <circle cx="80" cy="330" r="5" fill="#7A9D8C" />
+  <text x="55" y="360" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#1E2321">A</text>
+
+  <circle cx="400" cy="330" r="5" fill="#7A9D8C" />
+  <text x="415" y="360" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#1E2321">C</text>
+
+  <circle cx="240" cy="100" r="5" fill="#7A9D8C" />
+  <text x="225" y="85" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#1E2321">B</text>
+
+  <!-- Точки M и N -->
+  <circle cx="160" cy="215" r="4" fill="#c2410c" />
+  <text x="140" y="210" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#c2410c">M</text>
+
+  <circle cx="320" cy="215" r="4" fill="#c2410c" />
+  <text x="330" y="210" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#c2410c">N</text>
+
+  <!-- Отметки равных отрезков на AB -->
+  <line x1="115" y1="275" x2="125" y2="280" stroke="#1E2321" stroke-width="1.5" />
+  <line x1="195" y1="150" x2="205" y2="155" stroke="#1E2321" stroke-width="1.5" />
+
+  <!-- Отметки равных отрезков на BC -->
+  <line x1="275" y1="155" x2="285" y2="150" stroke="#1E2321" stroke-width="1.5" />
+  <line x1="355" y1="275" x2="365" y2="280" stroke="#1E2321" stroke-width="1.5" />
+
+  <!-- Отметки параллельности -->
+  <line x1="110" y1="320" x2="120" y2="325" stroke="#c2410c" stroke-width="1.5" />
+  <line x1="115" y1="315" x2="125" y2="320" stroke="#c2410c" stroke-width="1.5" />
+
+  <line x1="350" y1="225" x2="360" y2="230" stroke="#c2410c" stroke-width="1.5" />
+  <line x1="355" y1="220" x2="365" y2="225" stroke="#c2410c" stroke-width="1.5" />
+
+  <!-- Обозначения -->
+  <text x="220" y="240" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#c2410c">MN</text>
+  <text x="230" y="355" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">AC</text>
+
+  <!-- Формула -->
+  <text x="250" y="395" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321" text-anchor="middle">MN ∥ AC    |    MN = AC / 2</text>
+</svg>

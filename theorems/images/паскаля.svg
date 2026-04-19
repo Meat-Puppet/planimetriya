@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 460" width="100%" height="100%">
+  <rect width="500" height="460" fill="#f5f7fa" rx="12" />
+
+  <!-- Окружность -->
+  <circle cx="250" cy="220" r="130" fill="none" stroke="#1E2321" stroke-width="1.5" stroke-dasharray="6,3" />
+
+  <!-- Шестиугольник ABCDEF -->
+  <line x1="160" y1="100" x2="340" y2="120" stroke="#1E2321" stroke-width="2" />
+  <line x1="340" y1="120" x2="380" y2="260" stroke="#1E2321" stroke-width="2" />
+  <line x1="380" y1="260" x2="320" y2="350" stroke="#1E2321" stroke-width="2" />
+  <line x1="320" y1="350" x2="180" y2="350" stroke="#1E2321" stroke-width="2" />
+  <line x1="180" y1="350" x2="120" y2="240" stroke="#1E2321" stroke-width="2" />
+  <line x1="120" y1="240" x2="160" y2="100" stroke="#1E2321" stroke-width="2" />
+
+  <!-- Вершины -->
+  <circle cx="160" cy="100" r="5" fill="#7A9D8C" />
+  <text x="140" y="90" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">A</text>
+  <circle cx="340" cy="120" r="5" fill="#7A9D8C" />
+  <text x="355" y="115" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">B</text>
+  <circle cx="380" cy="260" r="5" fill="#7A9D8C" />
+  <text x="395" y="260" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">C</text>
+  <circle cx="320" cy="350" r="5" fill="#7A9D8C" />
+  <text x="335" y="370" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">D</text>
+  <circle cx="180" cy="350" r="5" fill="#7A9D8C" />
+  <text x="155" y="370" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">E</text>
+  <circle cx="120" cy="240" r="5" fill="#7A9D8C" />
+  <text x="90" y="240" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">F</text>
+
+  <!-- Продолжения противоположных сторон -->
+  <line x1="160" y1="100" x2="200" y2="50" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="4,2" />
+  <line x1="180" y1="350" x2="200" y2="50" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="4,2" />
+  <line x1="340" y1="120" x2="420" y2="100" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,2" />
+  <line x1="120" y1="240" x2="420" y2="100" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,2" />
+  <line x1="380" y1="260" x2="420" y2="380" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,2" />
+  <line x1="320" y1="350" x2="420" y2="380" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,2" />
+
+  <!-- Точки пересечения P, Q, R -->
+  <circle cx="200" cy="50" r="5" fill="#c2410c" />
+  <text x="210" y="45" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#c2410c">P</text>
+
+  <circle cx="420" cy="100" r="5" fill="#2563eb" />
+  <text x="435" y="95" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#2563eb">Q</text>
+
+  <circle cx="420" cy="380" r="5" fill="#16a34a" />
+  <text x="435" y="385" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#16a34a">R</text>
+
+  <!-- Прямая Паскаля -->
+  <line x1="190" y1="40" x2="430" y2="390" stroke="#9333ea" stroke-width="2.5" />
+  <text x="300" y="250" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#9333ea">прямая Паскаля</text>
+
+  <!-- Формула -->
+  <text x="250" y="450" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#1E2321" text-anchor="middle">P = AB ∩ DE    |    Q = BC ∩ EF    |    R = CD ∩ FA    |    P, Q, R коллинеарны</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 420" width="100%" height="100%">
+  <rect width="500" height="420" fill="#f5f7fa" rx="12" />
+
+  <!-- Треугольник ABC -->
+  <line x1="80" y1="330" x2="420" y2="330" stroke="#1E2321" stroke-width="2.5" />
+  <line x1="80" y1="330" x2="250" y2="90" stroke="#1E2321" stroke-width="2.5" />
+  <line x1="250" y1="90" x2="420" y2="330" stroke="#1E2321" stroke-width="2.5" />
+
+  <!-- Биссектриса из A -->
+  <line x1="80" y1="330" x2="290" y2="260" stroke="#c2410c" stroke-width="2.5" />
+
+  <!-- Биссектриса из B -->
+  <line x1="420" y1="330" x2="210" y2="260" stroke="#2563eb" stroke-width="2.5" />
+
+  <!-- Вершины -->
+  <circle cx="80" cy="330" r="5" fill="#7A9D8C" />
+  <text x="55" y="360" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#1E2321">A</text>
+
+  <circle cx="420" cy="330" r="5" fill="#7A9D8C" />
+  <text x="435" y="360" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#1E2321">B</text>
+
+  <circle cx="250" cy="90" r="5" fill="#7A9D8C" />
+  <text x="235" y="75" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#1E2321">C</text>
+
+  <!-- Основания биссектрис -->
+  <circle cx="290" cy="260" r="4" fill="#c2410c" />
+  <text x="300" y="255" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#c2410c">A₁</text>
+
+  <circle cx="210" cy="260" r="4" fill="#2563eb" />
+  <text x="180" y="255" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#2563eb">B₁</text>
+
+  <!-- Обозначения биссектрис -->
+  <text x="175" y="310" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#c2410c">lₐ</text>
+  <text x="310" y="310" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#2563eb">l_b</text>
+
+  <!-- Обозначения сторон -->
+  <text x="240" y="355" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">a</text>
+  <text x="340" y="220" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">b</text>
+  <text x="140" y="220" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">c</text>
+
+  <!-- Дуги углов -->
+  <path d="M 110 315 Q 125 300 120 285" fill="none" stroke="#1E2321" stroke-width="2" />
+  <text x="95" y="290" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">A</text>
+
+  <path d="M 380 315 Q 370 300 365 285" fill="none" stroke="#1E2321" stroke-width="2" />
+  <text x="385" y="290" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">B</text>
+
+  <path d="M 225 120 Q 240 135 245 120" fill="none" stroke="#1E2321" stroke-width="2" />
+  <text x="230" y="110" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321">C</text>
+
+  <!-- Формула -->
+  <text x="250" y="410" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#1E2321" text-anchor="middle">lₐ = l_b  ⇒  a = b</text>
+</svg>
