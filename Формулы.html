@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Формулы планиметрии · Справочник</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        
+        .formula-section {
+            margin-bottom: 40px;
+        }
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .formula-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+        }
+        .formula-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1E2321;
+            margin-bottom: 12px;
+        }
+        .formula-content {
+            font-size: 18px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #2d3a33;
+            background: #f8fafc;
+            padding: 12px 16px;
+            border-radius: 8px;
+            word-break: break-word;
+        }
+        .subsection-heading {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin: 32px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px dashed #b9c9c1;
+        }
+        .page-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .page-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 640px) {
+            .formula-grid {
+                grid-template-columns: 1fr;
+            }
+            .subsection-heading {
+                font-size: 20px;
+            }
+            .page-title {
+                font-size: 32px;
+            }
+            .page-subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="Теоремы планиметрии.html" class="logo-link">
+                    <img src="logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="Теоремы планиметрии.html">Главная</a>
+                <a href="все теоремы.html">Все теоремы</a>
+                <a href="формулы.html" class="active">Формулы</a>
+                <a href="задачи.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <h1 class="page-title">Формулы планиметрии</h1>
+                <p class="page-subtitle">Все основные формулы и соотношения из теорем планиметрии</p>
+                
+                <h2 class="section-title">📐 Треугольники (общие)</h2>
+                <div class="formula-grid">
+                    <div class="formula-card"><div class="formula-name">Сумма углов</div><div class="formula-content">∠A + ∠B + ∠C = 180°</div></div>
+                    <div class="formula-card"><div class="formula-name">Внешний угол</div><div class="formula-content">∠внеш = ∠A + ∠B</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема синусов</div><div class="formula-content">a/sin A = b/sin B = c/sin C = 2R</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема косинусов</div><div class="formula-content">c² = a² + b² − 2ab·cos C</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема тангенсов</div><div class="formula-content">(a−b)/(a+b) = tg[(A−B)/2] / tg[(A+B)/2]</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Стюарта</div><div class="formula-content">b²m + c²n = a(d² + mn)</div></div>
+                    <div class="formula-card"><div class="formula-name">Свойство биссектрисы</div><div class="formula-content">BD/DC = AB/AC</div></div>
+                    <div class="formula-card"><div class="formula-name">Длина биссектрисы</div><div class="formula-content">lₐ = √(bc − mn)</div></div>
+                    <div class="formula-card"><div class="formula-name">Медиана</div><div class="formula-content">mₐ = ½√(2b² + 2c² − a²)</div></div>
+                    <div class="formula-card"><div class="formula-name">Свойство медиан</div><div class="formula-content">AO:OM = 2:1</div></div>
+                    <div class="formula-card"><div class="formula-name">Высота</div><div class="formula-content">hₐ = 2S/a = b·sin C</div></div>
+                    <div class="formula-card"><div class="formula-name">Серединный перпендикуляр</div><div class="formula-content">MA = MB</div></div>
+                    <div class="formula-card"><div class="formula-name">Неравенство треугольника</div><div class="formula-content">a + b &gt; c</div></div>
+                    <div class="formula-card"><div class="formula-name">Формула Герона</div><div class="formula-content">S = √(p(p−a)(p−b)(p−c)), p = (a+b+c)/2</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Эйлера (треугольник)</div><div class="formula-content">d² = R(R − 2r)</div></div>
+                </div>
+
+                <h3 class="subsection-heading">🔺 Равнобедренный треугольник</h3>
+                <div class="formula-grid">
+                    <div class="formula-card"><div class="formula-name">Углы при основании</div><div class="formula-content">∠A = ∠B</div></div>
+                    <div class="formula-card"><div class="formula-name">Признак равнобедренности</div><div class="formula-content">∠A = ∠B ⇒ a = b</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Штейнера—Лемуса</div><div class="formula-content">lₐ = l_b ⇒ a = b</div></div>
+                </div>
+
+                <h3 class="subsection-heading">🔷 Равенство треугольников</h3>
+                <div class="formula-grid">
+                    <div class="formula-card"><div class="formula-name">I признак (две стороны и угол)</div><div class="formula-content">AB=A₁B₁, AC=A₁C₁, ∠A=∠A₁ ⇒ ∆=∆</div></div>
+                    <div class="formula-card"><div class="formula-name">II признак (сторона и два угла)</div><div class="formula-content">AB=A₁B₁, ∠A=∠A₁, ∠B=∠B₁ ⇒ ∆=∆</div></div>
+                    <div class="formula-card"><div class="formula-name">III признак (три стороны)</div><div class="formula-content">AB=A₁B₁, BC=B₁C₁, AC=A₁C₁ ⇒ ∆=∆</div></div>
+                </div>
+
+                <h3 class="subsection-heading">📏 Прямоугольный треугольник</h3>
+                <div class="formula-grid">
+                    <div class="formula-card"><div class="formula-name">Теорема Пифагора</div><div class="formula-content">c² = a² + b²</div></div>
+                    <div class="formula-card"><div class="formula-name">Высота к гипотенузе</div><div class="formula-content">h² = a_c · b_c</div></div>
+                    <div class="formula-card"><div class="formula-name">Катет через проекцию</div><div class="formula-content">a² = c · a_c</div></div>
+                    <div class="formula-card"><div class="formula-name">Катет против 30°</div><div class="formula-content">a = c/2</div></div>
+                    <div class="formula-card"><div class="formula-name">Медиана к гипотенузе</div><div class="formula-content">m = c/2 = R</div></div>
+                </div>
+
+                <h2 class="section-title">📐 Подобие треугольников</h2>
+                <div class="formula-grid">
+                    <div class="formula-card"><div class="formula-name">I признак (по двум углам)</div><div class="formula-content">∠A = ∠A₁, ∠B = ∠B₁ ⇒ ∆ABC ∾ ∆A₁B₁C₁</div></div>
+                    <div class="formula-card"><div class="formula-name">II признак (две стороны и угол)</div><div class="formula-content">a/a₁ = b/b₁, ∠C = ∠C₁ ⇒ ∆ABC ∾ ∆A₁B₁C₁</div></div>
+                    <div class="formula-card"><div class="formula-name">III признак (три стороны)</div><div class="formula-content">a/a₁ = b/b₁ = c/c₁ ⇒ ∆ABC ∾ ∆A₁B₁C₁</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Фалеса</div><div class="formula-content">AD/DB = AE/EC</div></div>
+                    <div class="formula-card"><div class="formula-name">Средняя линия</div><div class="formula-content">MN ∥ AC, MN = ½ AC</div></div>
+                </div>
+
+                <h2 class="section-title">🔲 Четырёхугольники</h2>
+                <div class="formula-grid">
+                    <div class="formula-card"><div class="formula-name">Сумма углов n-угольника</div><div class="formula-content">Σ = (n − 2) · 180°</div></div>
+                    <div class="formula-card"><div class="formula-name">Средняя линия трапеции</div><div class="formula-content">m = (a + b) / 2</div></div>
+                    <div class="formula-card"><div class="formula-name">Площадь трапеции</div><div class="formula-content">S = (a + b) · h / 2</div></div>
+                    <div class="formula-card"><div class="formula-name">Параллелограмм (стороны)</div><div class="formula-content">AB = CD, BC = AD, AB ∥ CD, BC ∥ AD</div></div>
+                    <div class="formula-card"><div class="formula-name">Параллелограмм (диагонали)</div><div class="formula-content">AO = OC, BO = OD</div></div>
+                    <div class="formula-card"><div class="formula-name">Площадь параллелограмма</div><div class="formula-content">S = a · hₐ = ab · sin α</div></div>
+                    <div class="formula-card"><div class="formula-name">Ромб (диагонали)</div><div class="formula-content">d₁ ⟂ d₂, S = ½ d₁ d₂</div></div>
+                    <div class="formula-card"><div class="formula-name">Прямоугольник (диагонали)</div><div class="formula-content">d₁ = d₂ = √(a² + b²)</div></div>
+                    <div class="formula-card"><div class="formula-name">Квадрат</div><div class="formula-content">S = a², d = a√2</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Вариньона</div><div class="formula-content">Середины сторон → параллелограмм</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Птолемея</div><div class="formula-content">AC · BD = AB · CD + BC · AD</div></div>
+                    <div class="formula-card"><div class="formula-name">Вписанный четырёхугольник</div><div class="formula-content">∠A + ∠C = ∠B + ∠D = 180°</div></div>
+                    <div class="formula-card"><div class="formula-name">Формула Брахмагупты</div><div class="formula-content">S = √((p−a)(p−b)(p−c)(p−d)), p = (a+b+c+d)/2</div></div>
+                    <div class="formula-card"><div class="formula-name">Описанный четырёхугольник</div><div class="formula-content">AB + CD = BC + AD</div></div>
+                </div>
+
+                <h2 class="section-title">⚪ Окружность</h2>
+                <div class="formula-grid">
+                    <div class="formula-card"><div class="formula-name">Вписанный угол</div><div class="formula-content">∠ABC = ½ ∪AC</div></div>
+                    <div class="formula-card"><div class="formula-name">Центральный угол</div><div class="formula-content">∠AOB = ∪AB</div></div>
+                    <div class="formula-card"><div class="formula-name">Угол между касательной и хордой</div><div class="formula-content">∠ = ½ ∪ (заключённой дуги)</div></div>
+                    <div class="formula-card"><div class="formula-name">Касательная и секущая</div><div class="formula-content">AB² = AC · AD</div></div>
+                    <div class="formula-card"><div class="formula-name">Пересекающиеся хорды</div><div class="formula-content">AE · EB = CE · ED</div></div>
+                    <div class="formula-card"><div class="formula-name">Отрезки касательных</div><div class="formula-content">AB = AC</div></div>
+                    <div class="formula-card"><div class="formula-name">Длина окружности</div><div class="formula-content">C = 2πR</div></div>
+                    <div class="formula-card"><div class="formula-name">Площадь круга</div><div class="formula-content">S = πR²</div></div>
+                    <div class="formula-card"><div class="formula-name">Длина дуги</div><div class="formula-content">L = πR · α / 180°</div></div>
+                    <div class="formula-card"><div class="formula-name">Площадь сектора</div><div class="formula-content">S = πR² · α / 360°</div></div>
+                </div>
+
+                <h2 class="section-title">📍 Замечательные точки и линии</h2>
+                <div class="formula-grid">
+                    <div class="formula-card"><div class="formula-name">Центроид (медианы)</div><div class="formula-content">AG : GM = 2 : 1</div></div>
+                    <div class="formula-card"><div class="formula-name">Инцентр (биссектрисы)</div><div class="formula-content">r = S / p</div></div>
+                    <div class="formula-card"><div class="formula-name">Центр описанной окружности</div><div class="formula-content">R = abc / (4S)</div></div>
+                    <div class="formula-card"><div class="formula-name">Ортоцентр</div><div class="formula-content">AH = 2R·cos A</div></div>
+                    <div class="formula-card"><div class="formula-name">Прямая Эйлера</div><div class="formula-content">OH = 3·OG, HG = 2·GO</div></div>
+                    <div class="formula-card"><div class="formula-name">Окружность девяти точек</div><div class="formula-content">R₉ = R / 2</div></div>
+                    <div class="formula-card"><div class="formula-name">Точка Жергонна</div><div class="formula-content">Пересечение чевиан к точкам касания вписанной</div></div>
+                    <div class="formula-card"><div class="formula-name">Точка Нагеля</div><div class="formula-content">Пересечение чевиан к точкам касания вневписанных</div></div>
+                </div>
+
+                <h2 class="section-title">📚 Классические теоремы</h2>
+                <div class="formula-grid">
+                    <div class="formula-card"><div class="formula-name">Теорема Чевы</div><div class="formula-content">(BD/DC) · (CE/EA) · (AF/FB) = 1</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Менелая</div><div class="formula-content">(BD/DC) · (CE/EA) · (AF/FB) = 1</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Ван-Обеля</div><div class="formula-content">AF/FB + AE/EC = AD/OD</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Дезарга</div><div class="formula-content">Перспективные треугольники</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Паскаля</div><div class="formula-content">Точки пересечения противоположных сторон вписанного шестиугольника коллинеарны</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Брианшона</div><div class="formula-content">Диагонали описанного шестиугольника пересекаются в одной точке</div></div>
+                    <div class="formula-card"><div class="formula-name">Прямая Симсона</div><div class="formula-content">Основания перпендикуляров из точки описанной окружности коллинеарны</div></div>
+                    <div class="formula-card"><div class="formula-name">Прямая Гаусса</div><div class="formula-content">Середины диагоналей полного четырёхсторонника коллинеарны</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Ньютона</div><div class="formula-content">Центр вписанной окружности лежит на прямой Ньютона</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Морли</div><div class="formula-content">Трисектрисы углов образуют равносторонний треугольник</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Фейербаха</div><div class="formula-content">Окружность 9 точек касается вписанной и вневписанных</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Паппа</div><div class="formula-content">Точки пересечения соответственных прямых коллинеарны</div></div>
+                    <div class="formula-card"><div class="formula-name">Теорема Карно</div><div class="formula-content">Перпендикуляры из вершин пересекаются в одной точке</div></div>
+                </div>
+
+                <div class="divider-light"></div>
+                <p class="footer-note">Справочник формул по теоремам планиметрии</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>
