@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Медиана к гипотенузе · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 26px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Медиана, проведённая к гипотенузе</h1>
+                    
+                    <div class="theorem-formula-large">
+                        m_c = c / 2 = R
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>В прямоугольном треугольнике медиана, проведённая к гипотенузе, равна половине гипотенузы и равна радиусу описанной окружности.</p>
+                        <p>Обратно: если в треугольнике медиана равна половине стороны, к которой она проведена, то треугольник прямоугольный, и эта сторона является гипотенузой.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан прямоугольный треугольник <span class="formula-inline">ABC</span> с прямым углом <span class="formula-inline">C</span>.</p>
+                        <p><span class="formula-inline">c = AB</span> — гипотенуза.</p>
+                        <p><span class="formula-inline">CM = m_c</span> — медиана, проведённая из вершины C к гипотенузе AB.</p>
+                        <p><span class="formula-inline">M</span> — середина гипотенузы, AM = MB = c/2.</p>
+                        <p><span class="formula-inline">R</span> — радиус описанной окружности.</p>
+                        <p>Тогда: <span class="formula-inline">m_c = c / 2 = R</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/медиана-к-гипотенузе.svg" alt="Чертёж к теореме о медиане к гипотенузе" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство (прямое)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Опишем около прямоугольного треугольника ABC окружность. Так как ∠C = 90°, гипотенуза AB является диаметром этой окружности.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Центр описанной окружности O совпадает с серединой гипотенузы M.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Медиана CM соединяет вершину C с серединой гипотенузы M, то есть с центром описанной окружности.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Следовательно, CM — радиус описанной окружности: CM = R.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Диаметр окружности равен гипотенузе: 2R = c, откуда R = c/2.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Таким образом, m_c = CM = R = c/2.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Доказательство (обратное)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть в треугольнике ABC медиана CM равна половине стороны AB: CM = AB/2.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Тогда точка C равноудалена от точек A, B и M: CA = CB? Нет, CM = AM = MB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Следовательно, точки A, B и C лежат на окружности с центром M и радиусом AB/2.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> AB — диаметр этой окружности. Угол ACB опирается на диаметр, следовательно, ∠ACB = 90°.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Таким образом, треугольник ABC — прямоугольный с гипотенузой AB.
+                            </div>
+                        </div>
+                        <p>Обратное утверждение доказано.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Медиана к гипотенузе делит прямоугольный треугольник на два равнобедренных треугольника: ACM и BCM.</li>
+                            <li>В равнобедренных треугольниках ACM и BCM углы при основаниях равны: ∠A = ∠ACM, ∠B = ∠BCM.</li>
+                            <li>Угол C делится медианой на углы, равные ∠A и ∠B: ∠ACM = ∠A, ∠BCM = ∠B.</li>
+                            <li>Центр описанной окружности прямоугольного треугольника лежит на середине гипотенузы.</li>
+                            <li>Радиус описанной окружности: R = c/2.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В прямоугольном треугольнике гипотенуза равна 10. Найдите медиану к гипотенузе.</p>
+                        <p><em>Решение:</em> m_c = c / 2 = 10 / 2 = 5.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В треугольнике ABC медиана CM равна 6, а сторона AB = 12. Докажите, что треугольник прямоугольный.</p>
+                        <p><em>Решение:</em> CM = 6 = 12/2 = AB/2. По обратной теореме, треугольник прямоугольный с прямым углом C.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> В прямоугольном треугольнике медиана к гипотенузе образует с одним из катетов угол 25°. Найдите острые углы треугольника.</p>
+                        <p><em>Решение:</em> Медиана делит угол C пополам? Нет. Углы: ∠A = ∠ACM = 25°, ∠B = 90° − 25° = 65°.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Свойство медианы к гипотенузе было известно ещё древнегреческим математикам. Фалес Милетский (VI век до н.э.) знал, что угол, опирающийся на диаметр, — прямой, а центр окружности лежит на середине гипотенузы.</p>
+                        <p>Евклид в «Началах» (Книга III, Предложение 31) доказывает, что угол, опирающийся на диаметр, прямой. Свойство медианы является прямым следствием этой теоремы.</p>
+                        <p>В средние века это свойство использовалось для построения прямых углов в архитектуре и землемерии.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Медиана к гипотенузе — единственная медиана, длина которой не зависит от катетов, а только от гипотенузы.</li>
+                            <li>Треугольник, образованный медианой к гипотенузе и катетами, всегда равнобедренный.</li>
+                            <li>Свойство медианы к гипотенузе — частный случай теоремы о том, что в любом треугольнике центр описанной окружности лежит на пересечении серединных перпендикуляров.</li>
+                            <li>В прямоугольном треугольнике точка пересечения медиан (центроид) делит медиану к гипотенузе в отношении 2:1, считая от вершины.</li>
+                            <li>Это свойство часто используется в задачах на построение прямоугольного треугольника по гипотенузе.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Медиана к гипотенузе · Свойство прямоугольного треугольника</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

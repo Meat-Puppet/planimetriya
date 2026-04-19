@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Сумма углов n-угольника · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 26px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Сумма углов выпуклого n-угольника</h1>
+                    
+                    <div class="theorem-formula-large">
+                        Σ = (n − 2) · 180°
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Сумма внутренних углов выпуклого n-угольника равна (n − 2) · 180°, где n — количество сторон (вершин) многоугольника.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан выпуклый n-угольник <span class="formula-inline">A₁A₂A₃...Aₙ</span>.</p>
+                        <p><span class="formula-inline">n</span> — количество сторон (вершин) многоугольника (<span class="formula-inline">n ≥ 3</span>).</p>
+                        <p><span class="formula-inline">Σ</span> — сумма всех внутренних углов многоугольника.</p>
+                        <p>Тогда: <span class="formula-inline">Σ = ∠A₁ + ∠A₂ + ... + ∠Aₙ = (n − 2) · 180°</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/сумма-углов-n-угольника.svg" alt="Чертёж к теореме о сумме углов n-угольника" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Выберем произвольную точку O внутри выпуклого n-угольника.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Соединим точку O со всеми вершинами многоугольника. Получим n треугольников.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Сумма углов всех n треугольников равна n · 180°.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Эта сумма включает все внутренние углы многоугольника Σ и все углы при вершине O, которые в сумме составляют полный угол 360°.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Составим уравнение: n · 180° = Σ + 360°.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Выразим Σ: Σ = n · 180° − 360° = (n − 2) · 180°.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Альтернативное доказательство (через диагонали)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Проведём из одной вершины n-угольника все диагонали к несоседним вершинам.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Эти диагонали разбивают n-угольник на (n − 2) треугольника.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Сумма углов всех этих треугольников равна сумме внутренних углов n-угольника.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Каждый треугольник имеет сумму углов 180°, всего треугольников (n − 2).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Следовательно, Σ = (n − 2) · 180°.
+                            </div>
+                        </div>
+                        <p>Это доказательство наглядно и не требует введения внутренней точки.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Частные случаи</h3>
+                        <ul class="facts-list">
+                            <li><strong>Треугольник (n = 3):</strong> Σ = (3 − 2) · 180° = 180°.</li>
+                            <li><strong>Четырёхугольник (n = 4):</strong> Σ = (4 − 2) · 180° = 360°.</li>
+                            <li><strong>Пятиугольник (n = 5):</strong> Σ = (5 − 2) · 180° = 540°.</li>
+                            <li><strong>Шестиугольник (n = 6):</strong> Σ = (6 − 2) · 180° = 720°.</li>
+                            <li><strong>Восьмиугольник (n = 8):</strong> Σ = (8 − 2) · 180° = 1080°.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Сумма внешних углов любого выпуклого n-угольника (взятых по одному при каждой вершине) равна 360°, независимо от n.</li>
+                            <li>Каждый внутренний угол правильного n-угольника равен (n − 2) · 180° / n.</li>
+                            <li>Количество диагоналей выпуклого n-угольника равно n(n − 3) / 2.</li>
+                            <li>С увеличением n сумма внутренних углов растёт линейно.</li>
+                            <li>Формула справедлива для любого выпуклого многоугольника, включая невыпуклые (если учитывать знаки углов).</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Найдите сумму внутренних углов семиугольника.</p>
+                        <p><em>Решение:</em> Σ = (7 − 2) · 180° = 5 · 180° = 900°.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Сумма внутренних углов многоугольника равна 1260°. Сколько у него сторон?</p>
+                        <p><em>Решение:</em> (n − 2) · 180° = 1260° ⇒ n − 2 = 7 ⇒ n = 9. Это девятиугольник.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Найдите угол правильного двенадцатиугольника.</p>
+                        <p><em>Решение:</em> Сумма углов: (12 − 2) · 180° = 1800°. Каждый угол: 1800° / 12 = 150°.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Формула суммы углов многоугольника была известна ещё древнегреческим математикам. Пифагорейцы (VI век до н.э.) знали, что сумма углов треугольника равна 180°, а четырёхугольника — 360°.</p>
+                        <p>Обобщение на n-угольник приписывается Евклиду, хотя в «Началах» оно явно не формулируется. В современном виде формула появилась в учебниках геометрии Нового времени.</p>
+                        <p>Интересно, что для невыпуклых многоугольников формула также работает, если учитывать знаки углов (положительные для выпуклых, отрицательные для вогнутых).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>При n → ∞ сумма внутренних углов стремится к бесконечности, а каждый угол правильного n-угольника стремится к 180°.</li>
+                            <li>Формула (n − 2) · 180° работает только в евклидовой геометрии. На сфере сумма углов n-угольника больше, а на гиперболической плоскости — меньше.</li>
+                            <li>Паркеты (замощения плоскости) правильными многоугольниками возможны только для n = 3, 4, 6, так как их углы должны делить 360° нацело.</li>
+                            <li>В архитектуре и дизайне знание суммы углов помогает рассчитывать повороты при создании многоугольных конструкций.</li>
+                            <li>Формула суммы углов — одна из немногих, которые запоминают на всю жизнь даже те, кто давно забыл школьную геометрию.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Сумма углов выпуклого n-угольника · Фундаментальная формула</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

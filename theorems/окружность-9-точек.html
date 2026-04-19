@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Окружность девяти точек · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 32px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 24px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Окружность девяти точек</h1>
+                    
+                    <div class="theorem-formula-large">
+                        R₉ = R / 2 &nbsp;&nbsp;|&nbsp;&nbsp; N — середина OH
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>В любом треугольнике середины сторон, основания высот и середины отрезков от ортоцентра до вершин лежат на одной окружности, называемой окружностью девяти точек (или окружностью Эйлера).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span>.</p>
+                        <p><span class="formula-inline">A₁, B₁, C₁</span> — середины сторон BC, AC, AB.</p>
+                        <p><span class="formula-inline">A₂, B₂, C₂</span> — основания высот.</p>
+                        <p><span class="formula-inline">A₃, B₃, C₃</span> — середины отрезков AH, BH, CH, где H — ортоцентр.</p>
+                        <p><span class="formula-inline">N</span> — центр окружности девяти точек.</p>
+                        <p><span class="formula-inline">R₉</span> — радиус окружности девяти точек.</p>
+                        <p>Тогда: <span class="formula-inline">R₉ = R / 2</span>, и <span class="formula-inline">N</span> — середина отрезка <span class="formula-inline">OH</span>.</p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/окружность-9-точек.svg" alt="Чертёж к теореме об окружности девяти точек" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Рассмотрим точки A₁, B₁, C₁ (середины сторон) и A₃, B₃, C₃ (середины AH, BH, CH).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Четырёхугольник A₁B₁A₃B₃ — прямоугольник. Его диагонали равны и делятся точкой пересечения пополам.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Следовательно, все шесть точек A₁, B₁, C₁, A₃, B₃, C₃ лежат на одной окружности.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Углы A₂, B₂, C₂ — прямые (основания высот). Прямоугольные треугольники опираются на диаметры этой окружности.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Следовательно, точки A₂, B₂, C₂ также лежат на этой окружности.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Все девять точек лежат на одной окружности.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Свойства окружности девяти точек</h3>
+                        <ul class="facts-list">
+                            <li><strong>Радиус:</strong> R₉ = R / 2, где R — радиус описанной окружности.</li>
+                            <li><strong>Центр N:</strong> середина отрезка OH, где O — центр описанной окружности, H — ортоцентр.</li>
+                            <li>Центр N лежит на прямой Эйлера.</li>
+                            <li>Окружность девяти точек касается вписанной и трёх вневписанных окружностей (теорема Фейербаха).</li>
+                            <li>Окружность девяти точек проходит через девять замечательных точек.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Девять точек</h3>
+                        <ul class="facts-list">
+                            <li><strong>Три середины сторон:</strong> A₁, B₁, C₁.</li>
+                            <li><strong>Три основания высот:</strong> A₂, B₂, C₂.</li>
+                            <li><strong>Три середины отрезков от ортоцентра до вершин:</strong> A₃, B₃, C₃.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>В любом треугольнике эти девять точек всегда лежат на одной окружности.</li>
+                            <li>Радиус окружности девяти точек вдвое меньше радиуса описанной окружности.</li>
+                            <li>Центр окружности девяти точек лежит на прямой Эйлера.</li>
+                            <li>Окружность девяти точек — одна из самых удивительных геометрических находок.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Радиус описанной окружности треугольника равен 10. Найдите радиус окружности девяти точек.</p>
+                        <p><em>Решение:</em> R₉ = R / 2 = 10 / 2 = 5.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Где находится центр окружности девяти точек в прямоугольном треугольнике?</p>
+                        <p><em>Решение:</em> В прямоугольном треугольнике ортоцентр H — вершина прямого угла, центр O — середина гипотенузы. Центр N — середина OH — лежит на гипотенузе.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Докажите, что в равностороннем треугольнике окружность девяти точек совпадает со вписанной окружностью.</p>
+                        <p><em>Решение:</em> В равностороннем треугольнике O = H = G = I, все девять точек лежат на вписанной окружности. R₉ = R/2 = r (для равностороннего R = 2r).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Окружность девяти точек была открыта независимо несколькими математиками. Карл Вильгельм Фейербах (1800–1834) в 1822 году доказал, что она касается вписанной и вневписанных окружностей (теорема Фейербаха).</p>
+                        <p>Леонард Эйлер в 1765 году доказал, что середины сторон и основания высот лежат на одной окружности. Позже было обнаружено, что на ней лежат и середины отрезков от ортоцентра до вершин.</p>
+                        <p>Окружность девяти точек называют также окружностью Эйлера или окружностью Фейербаха.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Окружность девяти точек — одна из самых «населённых» замечательных окружностей в треугольнике.</li>
+                            <li>На самом деле на ней лежит гораздо больше девяти замечательных точек (точки пересечения с другими линиями).</li>
+                            <li>Теорема Фейербаха: окружность девяти точек касается вписанной и трёх вневписанных окружностей.</li>
+                            <li>В равностороннем треугольнике окружность девяти точек совпадает со вписанной.</li>
+                            <li>Окружность девяти точек используется в доказательствах многих других теорем о треугольнике.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Окружность девяти точек · Окружность Эйлера</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

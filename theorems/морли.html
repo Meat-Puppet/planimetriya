@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Морли · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 26px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 18px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Морли</h1>
+                    
+                    <div class="theorem-formula-large">
+                        ∆XYZ — равносторонний (треугольник Морли)
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Точки пересечения смежных трисектрис углов произвольного треугольника образуют равносторонний треугольник. Этот треугольник называется треугольником Морли.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан произвольный треугольник <span class="formula-inline">ABC</span>.</p>
+                        <p>Проведём трисектрисы каждого угла — лучи, делящие угол на три равные части.</p>
+                        <p><span class="formula-inline">X</span> — точка пересечения трисектрис, ближайших к стороне <span class="formula-inline">BC</span>.</p>
+                        <p><span class="formula-inline">Y</span> — точка пересечения трисектрис, ближайших к стороне <span class="formula-inline">CA</span>.</p>
+                        <p><span class="formula-inline">Z</span> — точка пересечения трисектрис, ближайших к стороне <span class="formula-inline">AB</span>.</p>
+                        <p>Тогда треугольник <span class="formula-inline">XYZ</span> — равносторонний.</p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/морли.svg" alt="Чертёж к теореме Морли" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Теорема Морли имеет множество доказательств: тригонометрическое, геометрическое, с использованием комплексных чисел.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Тригонометрическое доказательство использует теорему синусов и формулы для трисектрис.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Можно показать, что стороны треугольника XYZ выражаются через радиус описанной окружности и синусы углов исходного треугольника.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Все три стороны оказываются равными: XY = YZ = ZX = 8R·sin(A/3)·sin(B/3)·sin(C/3).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Следовательно, треугольник XYZ — равносторонний.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Свойства треугольника Морли</h3>
+                        <ul class="facts-list">
+                            <li>Треугольник Морли всегда равносторонний, независимо от формы исходного треугольника.</li>
+                            <li>Сторона треугольника Морли равна 8R·sin(A/3)·sin(B/3)·sin(C/3), где R — радиус описанной окружности.</li>
+                            <li>Центр треугольника Морли совпадает с центром описанной окружности исходного треугольника.</li>
+                            <li>Существует 18 равносторонних треугольников, связанных с трисектрисами (теорема Морли — лишь один из них).</li>
+                            <li>Треугольник Морли всегда лежит внутри исходного треугольника.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Трисекция угла — неразрешимая задача на построение циркулем и линейкой, но теорема Морли утверждает удивительный факт о трисектрисах.</li>
+                            <li>Существует 27 различных треугольников, образованных трисектрисами, 18 из которых равносторонние.</li>
+                            <li>Теорема Морли — одна из самых красивых и неожиданных теорем элементарной геометрии.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольнике с углами 30°, 60°, 90° найдите сторону треугольника Морли, если R = 10.</p>
+                        <p><em>Решение:</em> Сторона = 8·10·sin(10°)·sin(20°)·sin(30°) ≈ 80·0,1736·0,3420·0,5 ≈ 2,37.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Докажите, что треугольник Морли всегда лежит внутри исходного треугольника.</p>
+                        <p><em>Решение:</em> Точки пересечения трисектрис находятся внутри углов, поэтому треугольник XYZ целиком лежит внутри ABC.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Что произойдёт с треугольником Морли, если исходный треугольник равносторонний?</p>
+                        <p><em>Решение:</em> В равностороннем треугольнике все углы 60°, трисектрисы дают 20°. Треугольник Морли также равносторонний и совпадает с центром? Нет, он будет меньше, но всё равно равносторонний.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь американского математика Фрэнка Морли (1860–1937), который открыл её в 1899 году.</p>
+                        <p>Морли был профессором университета Джонса Хопкинса и отцом знаменитого писателя Кристофера Морли. Он специализировался на алгебре и геометрии.</p>
+                        <p>Интересно, что Морли открыл эту теорему, играя с геометрическими построениями на бумаге. Он был удивлён, что такой красивый факт оставался незамеченным более 2000 лет.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Теорема Морли была названа «последним великим открытием в элементарной геометрии».</li>
+                            <li>Существует более 50 различных доказательств теоремы Морли.</li>
+                            <li>Трисекция угла невозможна циркулем и линейкой, но с помощью оригами (складывания бумаги) она выполнима.</li>
+                            <li>Теорема Морли не обобщается на деление угла на n частей для n > 3 — для квадрисектрис равносторонний треугольник уже не получается.</li>
+                            <li>В Японии теорема Морли была независимо открыта в начале XX века и опубликована на деревянных табличках сангаку.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Морли · Треугольник Морли из трисектрис</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

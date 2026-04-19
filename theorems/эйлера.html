@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Эйлера · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 26px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Эйлера (для треугольника)</h1>
+                    
+                    <div class="theorem-formula-large">
+                        d² = R(R − 2r)
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Квадрат расстояния между центрами вписанной и описанной окружностей треугольника равен R(R − 2r), где R — радиус описанной окружности, r — радиус вписанной окружности.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span>.</p>
+                        <p><span class="formula-inline">O</span> — центр описанной окружности.</p>
+                        <p><span class="formula-inline">I</span> — центр вписанной окружности (инцентр).</p>
+                        <p><span class="formula-inline">R</span> — радиус описанной окружности.</p>
+                        <p><span class="formula-inline">r</span> — радиус вписанной окружности.</p>
+                        <p><span class="formula-inline">d = OI</span> — расстояние между центрами.</p>
+                        <p>Тогда: <span class="formula-inline">d² = R(R − 2r)</span> или <span class="formula-inline">OI² = R² − 2Rr</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/эйлера.svg" alt="Чертёж к теореме Эйлера" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Проведём биссектрису AI до пересечения с описанной окружностью в точке L. L — середина дуги BC, не содержащей A.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> По теореме о биссектрисе: AI / IL = (b + c) / a.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> По свойству инцентра: IL = LB = LC. Треугольник LBC — равнобедренный.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> По теореме синусов в треугольнике LBC: LB = 2R·sin(A/2).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Расстояние от I до стороны BC равно r. Из треугольника IBC: r = IB·sin(B/2) = ...
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Применяя теорему о степени точки I относительно описанной окружности: OI² = R² − 2Rr.
+                            </div>
+                        </div>
+                        <p>Более строгое доказательство использует инверсию или теорему Птолемея.</p>
+                        
+                        <h3 style="margin-top: 24px;">Альтернативное доказательство (через степень точки)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Рассмотрим описанную окружность. Проведём диаметр через точку I, пересекающий окружность в точках P и Q.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> По свойству хорд: PI · IQ = R² − OI² (степень точки I).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> С другой стороны, можно показать, что PI · IQ = 2Rr.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Приравнивая: R² − d² = 2Rr ⇒ d² = R² − 2Rr = R(R − 2r).
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li><strong>Неравенство Эйлера:</strong> из d² ≥ 0 следует R ≥ 2r. Равенство достигается только для равностороннего треугольника.</li>
+                            <li>В любом треугольнике радиус описанной окружности не менее удвоенного радиуса вписанной окружности.</li>
+                            <li>Для равностороннего треугольника d = 0, центры совпадают, R = 2r.</li>
+                            <li>Для прямоугольного треугольника с катетами a, b и гипотенузой c: R = c/2, r = (a + b − c)/2, d = R − r.</li>
+                            <li>Зная R и r, можно оценить форму треугольника: чем ближе d к 0, тем треугольник ближе к равностороннему.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольнике R = 10, r = 4. Найдите расстояние между центрами.</p>
+                        <p><em>Решение:</em> d² = 10(10 − 8) = 10·2 = 20 ⇒ d = √20 = 2√5 ≈ 4,47.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Проверьте, может ли существовать треугольник с R = 5 и r = 3.</p>
+                        <p><em>Решение:</em> По неравенству Эйлера должно быть R ≥ 2r. Здесь 5 ≥ 6 — неверно. Такой треугольник не существует.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> В равностороннем треугольнике R = 6. Найдите r и d.</p>
+                        <p><em>Решение:</em> Для равностороннего: R = 2r ⇒ r = 3. Центры совпадают ⇒ d = 0.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь великого швейцарского математика Леонарда Эйлера (1707–1783), который опубликовал её в 1765 году в работе «Solutio facilis problematum quorundam geometricorum difficillimorum».</p>
+                        <p>Эйлер впервые установил связь между радиусами вписанной и описанной окружностей и расстоянием между их центрами. Это одно из самых элегантных соотношений в геометрии треугольника.</p>
+                        <p>Неравенство R ≥ 2r, вытекающее из этой теоремы, также носит имя Эйлера и считается одним из фундаментальных неравенств в геометрии.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Теорема Эйлера справедлива не только для треугольника, но и для любого вписанно-описанного многоугольника.</li>
+                            <li>Существует обобщение теоремы Эйлера для вневписанных окружностей: OIₐ² = R² + 2Rrₐ.</li>
+                            <li>Теорема Эйлера является частным случаем теоремы Понселе о поризме для треугольников.</li>
+                            <li>С помощью теоремы Эйлера можно доказать, что среди всех треугольников с заданными R и r равносторонний имеет максимальную площадь.</li>
+                            <li>В 2007 году было найдено элементарное доказательство теоремы Эйлера, доступное даже школьникам.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Эйлера · Связь между вписанной и описанной окружностями</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

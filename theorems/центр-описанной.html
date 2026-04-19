@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Центр описанной окружности · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 26px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Центр описанной окружности</h1>
+                    
+                    <div class="theorem-formula-large">
+                        R = abc / (4S)
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Серединные перпендикуляры к сторонам треугольника пересекаются в одной точке, которая является центром описанной окружности.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span>.</p>
+                        <p><span class="formula-inline">O</span> — точка пересечения серединных перпендикуляров (центр описанной окружности).</p>
+                        <p><span class="formula-inline">R</span> — радиус описанной окружности.</p>
+                        <p><span class="formula-inline">a, b, c</span> — стороны треугольника.</p>
+                        <p><span class="formula-inline">S</span> — площадь треугольника.</p>
+                        <p>Тогда: <span class="formula-inline">OA = OB = OC = R</span>, и <span class="formula-inline">R = abc / (4S)</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/центр-описанной.svg" alt="Чертёж к теореме о центре описанной окружности" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство (пересечение в одной точке)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть серединные перпендикуляры к сторонам AB и BC пересекаются в точке O.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Точка O лежит на серединном перпендикуляре к AB, следовательно, OA = OB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Точка O лежит на серединном перпендикуляре к BC, следовательно, OB = OC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Из этого следует, что OA = OC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Геометрическое место точек, равноудалённых от A и C, — серединный перпендикуляр к AC. Следовательно, O лежит на серединном перпендикуляре к AC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Все три серединных перпендикуляра пересекаются в одной точке O.
+                            </div>
+                        </div>
+                        <p>Первая часть доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Доказательство (формула радиуса)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> По теореме синусов: a / sin A = 2R.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Площадь треугольника: S = ½·b·c·sin A.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Выразим sin A: sin A = 2S / (b·c).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Подставляем в теорему синусов: a / (2S / (b·c)) = 2R ⇒ (a·b·c) / (2S) = 2R.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Отсюда R = (a·b·c) / (4S).
+                            </div>
+                        </div>
+                        <p>Формула доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Свойства центра описанной окружности</h3>
+                        <ul class="facts-list">
+                            <li>Центр описанной окружности равноудалён от всех вершин треугольника: OA = OB = OC = R.</li>
+                            <li>В остроугольном треугольнике центр описанной окружности лежит внутри треугольника.</li>
+                            <li>В прямоугольном треугольнике центр описанной окружности лежит на середине гипотенузы.</li>
+                            <li>В тупоугольном треугольнике центр описанной окружности лежит вне треугольника.</li>
+                            <li>Радиус описанной окружности: R = a / (2 sin A) = b / (2 sin B) = c / (2 sin C).</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Около любого треугольника можно описать окружность, и притом только одну.</li>
+                            <li>Центр описанной окружности — точка пересечения серединных перпендикуляров.</li>
+                            <li>В прямоугольном треугольнике R = c / 2, где c — гипотенуза.</li>
+                            <li>Центр описанной окружности, центроид и ортоцентр лежат на одной прямой — прямой Эйлера.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Стороны треугольника равны 13, 14, 15. Найдите радиус описанной окружности.</p>
+                        <p><em>Решение:</em> p = 21, S = √(21·8·7·6) = 84. R = (13·14·15) / (4·84) = 2730 / 336 = 8,125.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В треугольнике ABC сторона a = 10, угол A = 30°. Найдите R.</p>
+                        <p><em>Решение:</em> R = a / (2 sin A) = 10 / (2·0,5) = 10.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Где находится центр описанной окружности для треугольника с углами 120°, 30°, 30°?</p>
+                        <p><em>Решение:</em> Треугольник тупоугольный (120° > 90°). Центр описанной окружности лежит вне треугольника.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Свойство серединных перпендикуляров пересекаться в одной точке было известно ещё древнегреческим математикам. Евклид в «Началах» (Книга IV, Предложение 5) доказывает, что около любого треугольника можно описать окружность.</p>
+                        <p>Доказательство основано на том, что точка пересечения двух серединных перпендикуляров равноудалена от всех вершин треугольника.</p>
+                        <p>Центр описанной окружности — одна из четырёх замечательных точек треугольника, наряду с центроидом, инцентром и ортоцентром.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>В равностороннем треугольнике центр описанной окружности совпадает с центроидом, инцентром и ортоцентром.</li>
+                            <li>Окружность, описанная около треугольника, проходит через все три его вершины.</li>
+                            <li>Формула Эйлера связывает расстояние между центрами вписанной и описанной окружностей: OI² = R² − 2Rr.</li>
+                            <li>Теорема синусов связывает стороны треугольника с радиусом описанной окружности: a/sin A = b/sin B = c/sin C = 2R.</li>
+                            <li>В навигации и геодезии описанные окружности используются для определения местоположения по трём ориентирам (метод триангуляции).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Центр описанной окружности · Точка пересечения серединных перпендикуляров</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

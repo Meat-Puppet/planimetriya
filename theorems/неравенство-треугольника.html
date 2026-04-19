@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Неравенство треугольника · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 32px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 24px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Неравенство треугольника</h1>
+                    
+                    <div class="theorem-formula-large">
+                        a + b &gt; c &nbsp;&nbsp;|&nbsp;&nbsp; a + c &gt; b &nbsp;&nbsp;|&nbsp;&nbsp; b + c &gt; a
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Сумма любых двух сторон треугольника всегда больше третьей стороны.</p>
+                        <p>Обратно: если для трёх отрезков с длинами a, b, c выполняются все три неравенства a + b &gt; c, a + c &gt; b, b + c &gt; a, то из этих отрезков можно составить треугольник.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник со сторонами:</p>
+                        <p><span class="formula-inline">a, b, c</span> — длины сторон треугольника.</p>
+                        <p>Тогда справедливы неравенства:</p>
+                        <p><span class="formula-inline">a + b &gt; c</span></p>
+                        <p><span class="formula-inline">a + c &gt; b</span></p>
+                        <p><span class="formula-inline">b + c &gt; a</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/неравенство-треугольника.svg" alt="Чертёж к неравенству треугольника" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Рассмотрим треугольник ABC. Продлим сторону AC за точку A на отрезок AD = AB = c.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Соединим точки B и D. Треугольник ABD — равнобедренный (AB = AD), поэтому ∠ABD = ∠ADB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Угол CBD больше угла ABD (так как луч BD проходит внутри угла ABC).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Следовательно, ∠CBD &gt; ∠ADB. В треугольнике BCD против большего угла лежит большая сторона.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Сторона CD = CA + AD = b + c. Против угла CBD лежит сторона CD, против угла ADB — сторона BC = a.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Так как ∠CBD &gt; ∠ADB, то CD &gt; BC, то есть b + c &gt; a.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Аналогично доказываются остальные два неравенства.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Доказательство (через ломаную)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Длина ломаной, соединяющей две точки, всегда больше длины отрезка, соединяющего эти точки напрямую.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Ломаная из двух сторон AB и BC соединяет точки A и C. Её длина равна c + a.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Прямой отрезок AC имеет длину b. Следовательно, c + a &gt; b.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Аналогично для других пар сторон.
+                            </div>
+                        </div>
+                        <p>Это наглядное геометрическое доказательство.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li><strong>Разность двух сторон:</strong> |a − b| &lt; c (модуль разности любых двух сторон меньше третьей стороны).</li>
+                            <li>Если для трёх чисел a ≤ b ≤ c выполняется a + b &gt; c, то из них можно составить треугольник.</li>
+                            <li>В вырожденном случае, когда a + b = c, точки лежат на одной прямой (треугольник вырождается в отрезок).</li>
+                            <li>Периметр треугольника всегда больше удвоенной любой его стороны.</li>
+                            <li>Неравенство треугольника является аксиомой метрики и лежит в основе определения расстояния.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Проверьте, можно ли составить треугольник из отрезков длиной 5, 7 и 10.</p>
+                        <p><em>Решение:</em> Проверяем: 5 + 7 = 12 &gt; 10 ✓; 5 + 10 = 15 &gt; 7 ✓; 7 + 10 = 17 &gt; 5 ✓. Треугольник существует.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Можно ли составить треугольник из отрезков 3, 4 и 8?</p>
+                        <p><em>Решение:</em> 3 + 4 = 7 &lt; 8. Неравенство не выполняется. Треугольник не существует.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Две стороны треугольника равны 6 и 9. В каких пределах может лежать третья сторона?</p>
+                        <p><em>Решение:</em> По неравенству треугольника: c &lt; 6 + 9 = 15 и c &gt; |6 − 9| = 3. Ответ: 3 &lt; c &lt; 15.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Неравенство треугольника было известно ещё в Древней Греции. Евклид в «Началах» (Книга I, Предложение 20) формулирует его так: «В любом треугольнике две стороны, взятые вместе, больше третьей».</p>
+                        <p>Это одно из фундаментальных свойств евклидова пространства. Интересно, что в неевклидовых геометриях (например, на сфере) неравенство треугольника также выполняется, но для сферического расстояния.</p>
+                        <p>В современной математике неравенство треугольника является одной из аксиом метрического пространства.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Неравенство треугольника работает не только в геометрии, но и для комплексных чисел, векторов и даже в теории вероятностей.</li>
+                            <li>Кратчайшее расстояние между двумя точками — прямая. Любой обходной путь длиннее — это и есть суть неравенства треугольника.</li>
+                            <li>В архитектуре и строительстве неравенство треугольника используется для проверки жёсткости конструкций (фермы, мосты).</li>
+                            <li>В программировании проверка неравенства треугольника — стандартная задача для определения возможности существования треугольника.</li>
+                            <li>Существует «обратное неравенство треугольника»: |a − b| ≤ c — оно тоже всегда выполняется для сторон треугольника.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Неравенство треугольника · Фундаментальное свойство метрики</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

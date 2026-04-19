@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Инцентр · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 26px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Инцентр (точка пересечения биссектрис)</h1>
+                    
+                    <div class="theorem-formula-large">
+                        r = S / p
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Биссектрисы треугольника пересекаются в одной точке, которая является центром вписанной окружности.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span>.</p>
+                        <p><span class="formula-inline">AA₁</span>, <span class="formula-inline">BB₁</span>, <span class="formula-inline">CC₁</span> — биссектрисы углов A, B, C соответственно.</p>
+                        <p><span class="formula-inline">I</span> — точка пересечения биссектрис (инцентр).</p>
+                        <p><span class="formula-inline">r</span> — радиус вписанной окружности.</p>
+                        <p><span class="formula-inline">S</span> — площадь треугольника.</p>
+                        <p><span class="formula-inline">p = (a + b + c) / 2</span> — полупериметр.</p>
+                        <p>Тогда: <span class="formula-inline">r = S / p</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/инцентр.svg" alt="Чертёж к теореме об инцентре" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство (пересечение в одной точке)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть биссектрисы AA₁ и BB₁ пересекаются в точке I.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Точка I лежит на биссектрисе AA₁, следовательно, она равноудалена от сторон AB и AC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Точка I лежит на биссектрисе BB₁, следовательно, она равноудалена от сторон BA и BC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Из этого следует, что I равноудалена от сторон AC и BC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Геометрическое место точек, равноудалённых от сторон угла C, — его биссектриса. Следовательно, I лежит на биссектрисе CC₁.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Все три биссектрисы пересекаются в одной точке I.
+                            </div>
+                        </div>
+                        <p>Первая часть доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Доказательство (формула радиуса)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Точка I равноудалена от всех сторон треугольника. Расстояние от I до любой стороны равно r.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Площадь треугольника равна сумме площадей треугольников AIB, BIC, CIA.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> S = ½·c·r + ½·a·r + ½·b·r = ½·r·(a + b + c) = p·r.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Отсюда r = S / p.
+                            </div>
+                        </div>
+                        <p>Формула доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Свойства инцентра</h3>
+                        <ul class="facts-list">
+                            <li>Инцентр является центром вписанной окружности.</li>
+                            <li>Расстояние от инцентра до любой стороны равно радиусу вписанной окружности r.</li>
+                            <li>Инцентр всегда лежит внутри треугольника.</li>
+                            <li>Инцентр делит биссектрису в отношении (b + c) : a, считая от вершины.</li>
+                            <li>Угол BIC = 90° + A/2 (аналогично для других углов).</li>
+                            <li>Инцентр — одна из четырёх замечательных точек треугольника.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>В любой треугольник можно вписать окружность, и притом только одну.</li>
+                            <li>Центр вписанной окружности — точка пересечения биссектрис.</li>
+                            <li>Радиус вписанной окружности: r = 2S / (a + b + c).</li>
+                            <li>Площадь треугольника: S = p·r.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Стороны треугольника равны 13, 14, 15. Найдите радиус вписанной окружности.</p>
+                        <p><em>Решение:</em> p = (13 + 14 + 15) / 2 = 21. S = √(21·8·7·6) = 84 (по формуле Герона). r = S / p = 84 / 21 = 4.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Площадь треугольника 60, полупериметр 15. Найдите радиус вписанной окружности.</p>
+                        <p><em>Решение:</em> r = S / p = 60 / 15 = 4.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> В треугольнике ABC угол A = 60°. Найдите угол BIC, где I — инцентр.</p>
+                        <p><em>Решение:</em> ∠BIC = 90° + A/2 = 90° + 30° = 120°.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Свойство биссектрис пересекаться в одной точке было известно ещё древнегреческим математикам. Евклид в «Началах» (Книга IV, Предложение 4) доказывает, что в любой треугольник можно вписать окружность.</p>
+                        <p>Доказательство основано на том, что точка пересечения двух биссектрис равноудалена от всех сторон треугольника и, следовательно, лежит на третьей биссектрисе.</p>
+                        <p>Термин «инцентр» происходит от латинского «in» (внутри) и «centrum» (центр) — центр вписанной окружности.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Инцентр — единственная из замечательных точек, расстояние от которой до всех сторон одинаково.</li>
+                            <li>В равностороннем треугольнике инцентр совпадает с центроидом, ортоцентром и центром описанной окружности.</li>
+                            <li>Окружность, вписанная в треугольник, касается всех трёх его сторон.</li>
+                            <li>Существуют три вневписанные окружности, каждая из которых касается одной стороны и продолжений двух других. Их центры — точки пересечения биссектрис внешних углов.</li>
+                            <li>Формула Эйлера связывает расстояние между инцентром и центром описанной окружности: OI² = R² − 2Rr.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Инцентр · Центр вписанной окружности</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

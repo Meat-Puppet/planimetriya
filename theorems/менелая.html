@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Менелая · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 28px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 20px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Менелая</h1>
+                    
+                    <div class="theorem-formula-large">
+                        (BD/DC) · (CE/EA) · (AF/FB) = 1
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Пусть прямая пересекает стороны BC, CA, AB треугольника ABC (или их продолжения) в точках D, E, F соответственно. Тогда точки D, E, F лежат на одной прямой в том и только в том случае, если выполняется равенство:</p>
+                        <p><span class="formula-inline">(BD/DC) · (CE/EA) · (AF/FB) = 1</span></p>
+                        <p>При этом учитываются направленные отрезки: если точка лежит на продолжении стороны, отношение берётся со знаком минус.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span>.</p>
+                        <p>Прямая пересекает:</p>
+                        <p>• сторону <span class="formula-inline">BC</span> (или её продолжение) в точке <span class="formula-inline">D</span>.</p>
+                        <p>• сторону <span class="formula-inline">CA</span> (или её продолжение) в точке <span class="formula-inline">E</span>.</p>
+                        <p>• сторону <span class="formula-inline">AB</span> (или её продолжение) в точке <span class="formula-inline">F</span>.</p>
+                        <p>Точки D, E, F коллинеарны ⇔ <span class="formula-inline">(BD/DC) · (CE/EA) · (AF/FB) = 1</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/менелая.svg" alt="Чертёж к теореме Менелая" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство (необходимость)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть точки D, E, F лежат на одной прямой. Проведём через вершину C прямую, параллельную AB, до пересечения с прямой DEF в точке K.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Треугольники BDF и CDK подобны (по двум углам). Из подобия: BD/DC = BF/CK.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Треугольники AEF и CEK подобны. Из подобия: CE/EA = CK/AF.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Перемножаем полученные равенства: (BD/DC) · (CE/EA) = (BF/CK) · (CK/AF) = BF/AF.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Умножаем обе части на AF/FB: (BD/DC) · (CE/EA) · (AF/FB) = 1.
+                            </div>
+                        </div>
+                        <p>Необходимость доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Доказательство (достаточность)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть выполняется равенство (BD/DC) · (CE/EA) · (AF/FB) = 1.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Проведём прямую через точки D и E. Пусть она пересекает AB в точке F'.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> По уже доказанной необходимости: (BD/DC) · (CE/EA) · (AF'/F'B) = 1.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Сравнивая с условием, получаем AF/FB = AF'/F'B.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Отсюда следует, что F = F', и точка F лежит на прямой DE.
+                            </div>
+                        </div>
+                        <p>Достаточность доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Теорема Менелая — критерий коллинеарности трёх точек на сторонах треугольника (или их продолжениях).</li>
+                            <li>Если секущая параллельна одной из сторон, то соответствующая точка пересечения «уходит в бесконечность», и теорема принимает вид пропорции для оставшихся двух отношений.</li>
+                            <li>С помощью теоремы Менелая можно доказать теорему Дезарга, теорему Паппа и другие классические результаты.</li>
+                            <li>Теорема Менелая и теорема Чевы — двойственные утверждения.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольнике ABC точки D, E, F лежат на сторонах BC, CA, AB и делят их в отношениях 2:1, 3:2, 1:3. Лежат ли эти точки на одной прямой?</p>
+                        <p><em>Решение:</em> Проверяем произведение: (2/1) · (3/2) · (1/3) = 1. Да, лежат.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Докажите, что биссектрисы двух внутренних и одного внешнего угла треугольника пересекают противоположные стороны в точках, лежащих на одной прямой.</p>
+                        <p><em>Решение:</em> Используем свойство биссектрисы и теорему Менелая. Произведение отношений с учётом знаков равно 1.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Прямая пересекает продолжения сторон AB и AC и сторону BC. Можно ли применить теорему Менелая?</p>
+                        <p><em>Решение:</em> Да, теорема Менелая работает и для точек на продолжениях сторон, если использовать направленные отрезки (с учётом знаков).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь древнегреческого математика и астронома Менелая Александрийского (около 70–140 гг. н.э.).</p>
+                        <p>Менелай сформулировал и доказал эту теорему в своём труде «Сферика» для сферических треугольников. В плоской геометрии теорема стала широко известна позже.</p>
+                        <p>Интересно, что теорема Чевы была открыта на полтора тысячелетия позже, хотя она двойственна теореме Менелая.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Теорема Менелая — одна из древнейших теорем о треугольнике, дошедших до нас.</li>
+                            <li>В сферической геометрии теорема Менелая формулируется через синусы дуг.</li>
+                            <li>Теорема Менелая и теорема Чевы часто изучаются вместе как пример двойственности.</li>
+                            <li>С помощью теоремы Менелая можно решать задачи на доказательство коллинеарности точек без использования координат.</li>
+                            <li>В астрономии теорема Менелая использовалась для решения сферических треугольников при расчёте положений небесных тел.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Менелая · Критерий коллинеарности точек на сторонах треугольника</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

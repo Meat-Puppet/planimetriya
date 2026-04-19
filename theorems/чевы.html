@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Чевы · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 28px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 20px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Чевы</h1>
+                    
+                    <div class="theorem-formula-large">
+                        (BD/DC) · (CE/EA) · (AF/FB) = 1
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Пусть на сторонах BC, CA, AB треугольника ABC выбраны точки D, E, F соответственно. Тогда отрезки AD, BE, CF пересекаются в одной точке в том и только в том случае, если выполняется равенство:</p>
+                        <p><span class="formula-inline">(BD/DC) · (CE/EA) · (AF/FB) = 1</span></p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span>.</p>
+                        <p><span class="formula-inline">D</span> — точка на стороне <span class="formula-inline">BC</span>.</p>
+                        <p><span class="formula-inline">E</span> — точка на стороне <span class="formula-inline">CA</span>.</p>
+                        <p><span class="formula-inline">F</span> — точка на стороне <span class="formula-inline">AB</span>.</p>
+                        <p><span class="formula-inline">AD</span>, <span class="formula-inline">BE</span>, <span class="formula-inline">CF</span> — чевианы.</p>
+                        <p>Чевианы пересекаются в одной точке ⇔ <span class="formula-inline">(BD/DC) · (CE/EA) · (AF/FB) = 1</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/чевы.svg" alt="Чертёж к теореме Чевы" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство (необходимость)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть чевианы AD, BE, CF пересекаются в точке O.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Рассмотрим площади треугольников: S₁ = S(BOD), S₂ = S(COD), S₃ = S(COE), S₄ = S(AOE), S₅ = S(AOF), S₆ = S(BOF).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Отношение BD/DC = S(ABD)/S(ADC) = S(BOD)/S(COD) = (S(ABD) − S(BOD)) / (S(ADC) − S(COD)).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Используя свойства пропорций, можно показать, что BD/DC = S₆/S₅ · (S₂/S₁)? Более точно: BD/DC = S(AOB)/S(AOC).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Аналогично: CE/EA = S(BOC)/S(BOA), AF/FB = S(COA)/S(COB).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Перемножаем: (BD/DC) · (CE/EA) · (AF/FB) = (S(AOB)/S(AOC)) · (S(BOC)/S(BOA)) · (S(COA)/S(COB)) = 1.
+                            </div>
+                        </div>
+                        <p>Необходимость доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Доказательство (достаточность)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть выполняется равенство (BD/DC) · (CE/EA) · (AF/FB) = 1.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Пусть AD и BE пересекаются в точке O. Проведём CO до пересечения с AB в точке F'.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> По уже доказанной необходимости: (BD/DC) · (CE/EA) · (AF'/F'B) = 1.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Сравнивая с условием, получаем AF/FB = AF'/F'B.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Отсюда следует, что F = F', и чевиана CF также проходит через точку O.
+                            </div>
+                        </div>
+                        <p>Достаточность доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Медианы пересекаются в одной точке: D, E, F — середины сторон, все отношения равны 1, произведение = 1.</li>
+                            <li>Биссектрисы пересекаются в одной точке: по свойству биссектрисы BD/DC = AB/AC и т.д., произведение = 1.</li>
+                            <li>Высоты пересекаются в одной точке: для остроугольного треугольника отношения выражаются через тангенсы углов, произведение = 1.</li>
+                            <li>Теорема Чевы — мощный инструмент для доказательства пересечения чевиан в одной точке.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Докажите, что медианы треугольника пересекаются в одной точке.</p>
+                        <p><em>Решение:</em> Для медиан D, E, F — середины сторон, поэтому BD = DC, CE = EA, AF = FB. Произведение отношений = 1·1·1 = 1. По теореме Чевы медианы пересекаются в одной точке.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В треугольнике ABC точки D, E, F делят стороны в отношениях 1:2, 2:3, 3:1. Пересекаются ли чевианы в одной точке?</p>
+                        <p><em>Решение:</em> Проверяем произведение: (1/2) · (2/3) · (3/1) = 1. Да, пересекаются.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Докажите, что отрезки, соединяющие вершины с точками касания вписанной окружности, пересекаются в одной точке (точка Жергонна).</p>
+                        <p><em>Решение:</em> По свойству касательных отношения равны 1, произведение = 1. По теореме Чевы чевианы пересекаются в одной точке.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь итальянского математика и инженера Джованни Чевы (1647–1734), который опубликовал её в 1678 году в работе «De lineis rectis se invicem secantibus, statica constructio».</p>
+                        <p>Однако эта теорема была известна задолго до Чевы. Её знал ещё арабский математик Аль-Мутаман ибн Худ в XI веке, а возможно, и древнегреческие геометры.</p>
+                        <p>Теорема Чевы — одна из фундаментальных теорем геометрии треугольника, наряду с теоремой Менелая.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Теорема Чевы и теорема Менелая — две стороны одной медали: Чева — для пересечения в одной точке, Менелай — для коллинеарности точек.</li>
+                            <li>Чева был также известным гидравликом и экономистом.</li>
+                            <li>Существует тригонометрическая форма теоремы Чевы: (sin∠BAD / sin∠DAC) · (sin∠CBE / sin∠EBA) · (sin∠ACF / sin∠FCB) = 1.</li>
+                            <li>Теорема Чевы справедлива и для точек на продолжениях сторон, если учитывать знаки отрезков.</li>
+                            <li>С помощью теоремы Чевы можно доказать существование многих замечательных точек треугольника.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Чевы · Критерий пересечения трёх чевиан в одной точке</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

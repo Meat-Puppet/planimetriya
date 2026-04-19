@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Свойство углов при основании · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 26px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Свойство углов при основании равнобедренного треугольника</h1>
+                    
+                    <div class="theorem-formula-large">
+                        ∠A = ∠B &nbsp;&nbsp;⇔&nbsp;&nbsp; AC = BC
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>В равнобедренном треугольнике углы при основании равны.</p>
+                        <p>Обратно: если в треугольнике два угла равны, то он равнобедренный (стороны, противолежащие этим углам, равны).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span>, в котором <span class="formula-inline">AC = BC</span> (стороны равны).</p>
+                        <p><span class="formula-inline">AB</span> — основание равнобедренного треугольника.</p>
+                        <p><span class="formula-inline">∠A</span> и <span class="formula-inline">∠B</span> — углы при основании.</p>
+                        <p><span class="formula-inline">∠C</span> — угол при вершине.</p>
+                        <p>Тогда: <span class="formula-inline">∠A = ∠B</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/углы-при-основании.svg" alt="Чертёж к свойству углов при основании" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство (прямое)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Проведём биссектрису CD из вершины C к основанию AB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Рассмотрим треугольники ACD и BCD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> AC = BC по условию (треугольник равнобедренный).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> CD — общая сторона.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> ∠ACD = ∠BCD, так как CD — биссектриса.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Треугольники равны по двум сторонам и углу между ними (I признак).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Из равенства треугольников следует ∠A = ∠B.
+                            </div>
+                        </div>
+                        <p>Прямое утверждение доказано.</p>
+                        
+                        <h3 style="margin-top: 24px;">Доказательство (обратное)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть в треугольнике ABC углы A и B равны: ∠A = ∠B.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Проведём высоту CD из вершины C на основание AB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Рассмотрим прямоугольные треугольники ACD и BCD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> CD — общий катет.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> ∠A = ∠B по условию.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Треугольники равны по катету и острому углу.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Из равенства треугольников следует AC = BC.
+                            </div>
+                        </div>
+                        <p>Обратное утверждение доказано.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>В равнобедренном треугольнике биссектриса, медиана и высота, проведённые к основанию, совпадают.</li>
+                            <li>В равностороннем треугольнике все углы равны 60°.</li>
+                            <li>Если в треугольнике два угла равны, то он равнобедренный.</li>
+                            <li>В прямоугольном равнобедренном треугольнике острые углы равны 45°.</li>
+                            <li>Угол при вершине равнобедренного треугольника равен 180° − 2α, где α — угол при основании.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В равнобедренном треугольнике угол при вершине равен 40°. Найдите углы при основании.</p>
+                        <p><em>Решение:</em> Сумма углов: 180°. Углы при основании равны: (180° − 40°) / 2 = 70°.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В треугольнике ABC углы A и B равны 50°. Докажите, что треугольник равнобедренный и найдите угол C.</p>
+                        <p><em>Решение:</em> Так как ∠A = ∠B = 50°, треугольник равнобедренный (AC = BC). ∠C = 180° − 2·50° = 80°.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Периметр равнобедренного треугольника равен 36 см, основание равно 10 см. Найдите боковые стороны и углы, если угол при вершине 120°.</p>
+                        <p><em>Решение:</em> Боковые стороны: (36 − 10) / 2 = 13 см. Углы при основании: (180° − 120°) / 2 = 30°.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Свойство углов при основании равнобедренного треугольника было известно ещё в Древнем Египте и Вавилоне. Фалес Милетский (VI век до н.э.) использовал это свойство для измерения высоты пирамид.</p>
+                        <p>Евклид в «Началах» (Книга I, Предложение 5) приводит строгое доказательство. Эта теорема получила шуточное название «Pons Asinorum» (мост ослов), так как считалась первым серьёзным испытанием для изучающих геометрию.</p>
+                        <p>Интересно, что доказательство Евклида отличается от современного — он использовал дополнительные построения и не применял биссектрису.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Равнобедренный треугольник обладает осевой симметрией относительно биссектрисы (медианы, высоты), проведённой к основанию.</li>
+                            <li>В архитектуре и искусстве равнобедренные треугольники часто используются для создания визуальной гармонии (фронтоны зданий, египетские пирамиды).</li>
+                            <li>Свойство углов при основании — одно из первых геометрических утверждений, которое доказывают школьники.</li>
+                            <li>Существует «теорема о равнобедренном треугольнике» в сферической геометрии, но там равенство углов не гарантирует равенства сторон.</li>
+                            <li>Золотой треугольник — равнобедренный треугольник, у которого углы при основании равны 72°, а при вершине 36° — обладает уникальными пропорциями.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Свойство углов при основании · Фундаментальное свойство равнобедренного треугольника</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

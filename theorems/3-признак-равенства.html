@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>III признак равенства треугольников · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 30px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 22px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">III признак равенства треугольников</h1>
+                    
+                    <div class="theorem-formula-large">
+                        AB = A₁B₁ &nbsp;&nbsp;|&nbsp;&nbsp; BC = B₁C₁ &nbsp;&nbsp;|&nbsp;&nbsp; AC = A₁C₁ &nbsp;&nbsp;⇒&nbsp;&nbsp; ∆ = ∆
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Если три стороны одного треугольника соответственно равны трём сторонам другого треугольника, то такие треугольники равны.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть даны два треугольника: <span class="formula-inline">ABC</span> и <span class="formula-inline">A₁B₁C₁</span>.</p>
+                        <p><span class="formula-inline">AB = A₁B₁</span> — первая пара равных сторон.</p>
+                        <p><span class="formula-inline">BC = B₁C₁</span> — вторая пара равных сторон.</p>
+                        <p><span class="formula-inline">AC = A₁C₁</span> — третья пара равных сторон.</p>
+                        <p>Тогда: <span class="formula-inline">∆ABC = ∆A₁B₁C₁</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/3-признак-равенства.svg" alt="Чертёж к III признаку равенства треугольников" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Приложим треугольник ABC к треугольнику A₁B₁C₁ так, чтобы сторона AB совместилась с A₁B₁, а вершины C и C₁ оказались по разные стороны от прямой AB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Соединим точки C и C₁. Получим равнобедренные треугольники C₁AC и C₁BC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> В треугольнике C₁AC стороны AC = A₁C₁ (по условию), значит, он равнобедренный, и углы при основании равны: ∠AC₁C = ∠ACC₁.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Аналогично, в треугольнике C₁BC стороны BC = B₁C₁, он равнобедренный, и ∠BC₁C = ∠BCC₁.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Угол C = ∠ACC₁ + ∠BCC₁ = ∠AC₁C + ∠BC₁C = ∠C₁.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Теперь у нас есть AC = A₁C₁, BC = B₁C₁ и ∠C = ∠C₁. По I признаку равенства треугольников ∆ABC = ∆A₁B₁C₁.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Из равенства треугольников следует равенство всех соответствующих углов: ∠A = ∠A₁, ∠B = ∠B₁, ∠C = ∠C₁.</li>
+                            <li>Треугольник — жёсткая фигура: если заданы три стороны, треугольник определяется однозначно (с точностью до движения).</li>
+                            <li>III признак не требует знания углов, только длин сторон.</li>
+                            <li>Этот признак часто используется в строительстве и машиностроении для обеспечения жёсткости конструкций.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольниках ABC и A₁B₁C₁: AB = A₁B₁ = 5 см, BC = B₁C₁ = 6 см, AC = A₁C₁ = 7 см. Докажите, что треугольники равны.</p>
+                        <p><em>Решение:</em> По III признаку равенства треугольников (три стороны равны) ∆ABC = ∆A₁B₁C₁.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Докажите, что треугольники ABD и ACD равны, если AB = AC и BD = CD (AD — общая сторона).</p>
+                        <p><em>Решение:</em> AB = AC, BD = CD, AD — общая. По III признаку ∆ABD = ∆ACD.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Можно ли утверждать, что два треугольника равны, если их периметры равны и равны две стороны?</p>
+                        <p><em>Решение:</em> Да, если периметры равны и две стороны равны, то и третьи стороны равны. По III признаку треугольники равны.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>III признак равенства треугольников был известен ещё в Древней Греции. Евклид в «Началах» (Книга I, Предложение 8) формулирует и доказывает этот признак.</p>
+                        <p>Доказательство Евклида, приведённое выше (через равнобедренные треугольники), считается одним из самых изящных в «Началах». Интересно, что Евклид не использует метод наложения для III признака.</p>
+                        <p>Свойство жёсткости треугольника, вытекающее из III признака, широко использовалось в древней архитектуре и строительстве.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>III признак равенства треугольников часто обозначают аббревиатурой «ССС» (сторона-сторона-сторона) или «SSS» (Side-Side-Side).</li>
+                            <li>Треугольник — единственный многоугольник, который однозначно определяется длинами сторон (свойство жёсткости).</li>
+                            <li>В строительстве треугольные конструкции (фермы) используются именно из-за жёсткости, гарантированной III признаком.</li>
+                            <li>III признак не имеет аналога для четырёхугольников: зная четыре стороны, нельзя однозначно определить четырёхугольник.</li>
+                            <li>С помощью III признака можно доказать, что две окружности пересекаются не более чем в двух точках.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">III признак равенства треугольников · По трём сторонам</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

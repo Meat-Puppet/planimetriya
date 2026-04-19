@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Паппа · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 26px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 18px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Паппа</h1>
+                    
+                    <div class="theorem-formula-large">
+                        P, Q, R коллинеарны (прямая Паппа)
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Если на двух прямых взять по три точки: A, B, C на одной и A', B', C' на другой, то точки пересечения прямых AB' и A'B, BC' и B'C, CA' и C'A лежат на одной прямой. Эта прямая называется прямой Паппа.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть даны две прямые <span class="formula-inline">l₁</span> и <span class="formula-inline">l₂</span>.</p>
+                        <p>На <span class="formula-inline">l₁</span> выбраны точки <span class="formula-inline">A</span>, <span class="formula-inline">B</span>, <span class="formula-inline">C</span>.</p>
+                        <p>На <span class="formula-inline">l₂</span> выбраны точки <span class="formula-inline">A'</span>, <span class="formula-inline">B'</span>, <span class="formula-inline">C'</span>.</p>
+                        <p><span class="formula-inline">P = AB' ∩ A'B</span> — пересечение первой пары.</p>
+                        <p><span class="formula-inline">Q = BC' ∩ B'C</span> — пересечение второй пары.</p>
+                        <p><span class="formula-inline">R = CA' ∩ C'A</span> — пересечение третьей пары.</p>
+                        <p>Тогда точки <span class="formula-inline">P</span>, <span class="formula-inline">Q</span>, <span class="formula-inline">R</span> лежат на одной прямой — прямой Паппа.</p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="пикчи/паппа.svg" alt="Чертёж к теореме Паппа" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Теорема Паппа — одна из фундаментальных теорем проективной геометрии.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Доказательство можно провести с помощью теоремы Менелая, применённой несколько раз к различным треугольникам.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Альтернативно, можно использовать координатный метод или проективные преобразования.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> В проективной геометрии теорема Паппа принимается за аксиому или доказывается в зависимости от системы аксиом.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Свойства прямой Паппа</h3>
+                        <ul class="facts-list">
+                            <li>Теорема Паппа справедлива для любых двух прямых на плоскости (включая параллельные и пересекающиеся).</li>
+                            <li>Прямая Паппа — одна из самых известных линий в проективной геометрии.</li>
+                            <li>Конфигурация Паппа состоит из 9 точек и 9 прямых.</li>
+                            <li>Теорема Паппа является частным случаем теоремы Паскаля, когда коническое сечение вырождается в пару прямых.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Теорема Паппа — основа для построения проективной геометрии.</li>
+                            <li>Из теоремы Паппа следует коммутативность умножения в теле, построенном по аксиомам проективной геометрии (теорема Паппа-Паскаля).</li>
+                            <li>Теорема Паппа обобщается на случай большего числа точек.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> На двух прямых выбраны по три точки. Докажите, что три точки пересечения соответственных прямых лежат на одной прямой.</p>
+                        <p><em>Решение:</em> Это прямая формулировка теоремы Паппа.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Что произойдёт, если прямые параллельны?</p>
+                        <p><em>Решение:</em> Теорема Паппа остаётся справедливой и для параллельных прямых. В этом случае конфигурация выглядит иначе, но коллинеарность сохраняется.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Как теорема Паппа связана с теоремой Дезарга?</p>
+                        <p><em>Решение:</em> В проективной геометрии теорема Дезарга и теорема Паппа — две фундаментальные теоремы. Из теоремы Паппа можно вывести теорему Дезарга (теорема Гессенберга).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь древнегреческого математика Паппа Александрийского (около 290–350 гг. н.э.), который сформулировал её в своём труде «Математическое собрание» (Synagoge).</p>
+                        <p>Папп был одним из последних великих математиков античности. Его «Математическое собрание» — важнейший источник сведений о древнегреческой математике.</p>
+                        <p>Теорема Паппа была переоткрыта в XVII веке и стала одной из основ проективной геометрии наряду с теоремой Дезарга.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Конфигурация Паппа — одна из самых симметричных конфигураций в геометрии: 9 точек и 9 прямых, каждая прямая содержит 3 точки, через каждую точку проходят 3 прямые.</li>
+                            <li>Теорема Паппа — частный случай теоремы Паскаля, когда коническое сечение вырождается в две прямые.</li>
+                            <li>В проективной геометрии над полем теорема Паппа эквивалентна коммутативности умножения в этом поле.</li>
+                            <li>Теорема Паппа не зависит от аксиомы параллельности и справедлива как в евклидовой, так и в неевклидовых геометриях.</li>
+                            <li>С помощью теоремы Паппа можно построить проективную плоскость над любым полем.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Паппа · Коллинеарность точек пересечения</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>
