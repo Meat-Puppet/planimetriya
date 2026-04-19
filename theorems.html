@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Все теоремы планиметрии · Справочник</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        .subsection-heading {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin: 32px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px dashed #b9c9c1;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-formula {
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 10px;
+            word-break: break-word;
+        }
+        .theorem-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .theorem-card-link:hover .theorem-card {
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        .page-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .page-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 640px) {
+            .subsection-heading {
+                font-size: 20px;
+            }
+            .page-title {
+                font-size: 32px;
+            }
+            .page-subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="header">
+            <div class="site-title">
+                <a href="Теоремы планиметрии.html" class="logo-link">
+                    <img src="logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="Теоремы планиметрии.html">Главная</a>
+                <a href="theorems.html" class="active">Все теоремы</a>
+                <a href="formulas.html">Формулы</a>
+                <a href="tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="content-container">
+                <h1 class="page-title">Все теоремы планиметрии</h1>
+                <p class="page-subtitle">Полный каталог теорем школьного курса геометрии на плоскости</p>
+                
+                <h2 class="section-title">📐 Треугольники (общие)</h2>
+                <div class="figures-grid">
+                    <a href="theorems/sum-angles.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Сумма углов</div><div class="theorem-formula">∠A + ∠B + ∠C = 180°</div><div class="theorem-desc">Сумма внутренних углов треугольника равна 180°.</div></div></a>
+                    <a href="theorems/exterior-angle.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Внешний угол</div><div class="theorem-formula">∠внеш = ∠A + ∠B</div><div class="theorem-desc">Внешний угол треугольника равен сумме двух внутренних, не смежных с ним.</div></div></a>
+                    <a href="theorems/sine.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема синусов</div><div class="theorem-formula">a/sin A = b/sin B = c/sin C = 2R</div><div class="theorem-desc">Стороны пропорциональны синусам противолежащих углов.</div></div></a>
+                    <a href="theorems/cosine.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема косинусов</div><div class="theorem-formula">c² = a² + b² − 2ab·cos C</div><div class="theorem-desc">Квадрат стороны равен сумме квадратов двух других минус удвоенное произведение на косинус угла между ними.</div></div></a>
+                    <a href="theorems/tangent.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема тангенсов</div><div class="theorem-formula">(a−b)/(a+b) = tg[(A−B)/2] / tg[(A+B)/2]</div><div class="theorem-desc">Связывает разность и сумму сторон с тангенсами полуразности и полусуммы углов.</div></div></a>
+                    <a href="theorems/stewart.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Стюарта</div><div class="theorem-formula">b²m + c²n = a(d² + mn)</div><div class="theorem-desc">Для чевианы длиной d, делящей сторону a на отрезки m и n.</div></div></a>
+                    <a href="theorems/bisector.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Биссектриса</div><div class="theorem-formula">BD/DC = AB/AC</div><div class="theorem-desc">Биссектриса делит противоположную сторону на отрезки, пропорциональные прилежащим сторонам.</div></div></a>
+                    <a href="theorems/medians.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Медианы</div><div class="theorem-formula">mₐ = ½√(2b²+2c²−a²)</div><div class="theorem-desc">Медианы пересекаются в одной точке и делятся в отношении 2:1.</div></div></a>
+                    <a href="theorems/altitudes.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Высоты</div><div class="theorem-formula">hₐ = 2S/a</div><div class="theorem-desc">Высоты (или их продолжения) пересекаются в ортоцентре.</div></div></a>
+                    <a href="theorems/perpendicular-bisector.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Серединный перпендикуляр</div><div class="theorem-formula">MA = MB</div><div class="theorem-desc">Точка серединного перпендикуляра равноудалена от концов отрезка.</div></div></a>
+                    <a href="theorems/triangle-inequality.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Неравенство треугольника</div><div class="theorem-formula">a + b &gt; c</div><div class="theorem-desc">Сумма двух сторон всегда больше третьей.</div></div></a>
+                    <a href="theorems/heron.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Формула Герона</div><div class="theorem-formula">S = √(p(p−a)(p−b)(p−c))</div><div class="theorem-desc">Площадь треугольника через полупериметр p = (a+b+c)/2.</div></div></a>
+                    <a href="theorems/euler.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Эйлера</div><div class="theorem-formula">d² = R(R − 2r)</div><div class="theorem-desc">Расстояние d между центрами вписанной и описанной окружностей.</div></div></a>
+                </div>
+
+                <h3 class="subsection-heading">🔺 Равнобедренный треугольник</h3>
+                <div class="figures-grid">
+                    <a href="theorems/base-angles.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Углы при основании</div><div class="theorem-formula">∠A = ∠B</div><div class="theorem-desc">В равнобедренном треугольнике углы при основании равны.</div></div></a>
+                    <a href="theorems/median-bisector-altitude.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Медиана/биссектриса/высота</div><div class="theorem-formula">совпадают</div><div class="theorem-desc">К основанию медиана, биссектриса и высота совпадают.</div></div></a>
+                    <a href="theorems/angle-criterion.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Признак (по углам)</div><div class="theorem-formula">∠A = ∠B ⇒ a = b</div><div class="theorem-desc">Если два угла равны, треугольник равнобедренный.</div></div></a>
+                    <a href="theorems/steiner-lehmus.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Штейнера—Лемуса</div><div class="theorem-formula">lₐ = l_b ⇒ a = b</div><div class="theorem-desc">Если две биссектрисы равны, то треугольник равнобедренный.</div></div></a>
+                </div>
+
+                <h3 class="subsection-heading">📏 Прямоугольный треугольник</h3>
+                <div class="figures-grid">
+                    <a href="theorems/pythagoras.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Пифагора</div><div class="theorem-formula">c² = a² + b²</div><div class="theorem-desc">Квадрат гипотенузы равен сумме квадратов катетов.</div></div></a>
+                    <a href="theorems/proportional-segments.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Пропорциональные отрезки</div><div class="theorem-formula">h² = a_c·b_c , a² = c·a_c</div><div class="theorem-desc">Высота к гипотенузе — среднее пропорциональное.</div></div></a>
+                    <a href="theorems/leg-30.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Катет против 30°</div><div class="theorem-formula">a = c/2</div><div class="theorem-desc">Катет против 30° равен половине гипотенузы.</div></div></a>
+                    <a href="theorems/median-hypotenuse.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Медиана к гипотенузе</div><div class="theorem-formula">m = c/2</div><div class="theorem-desc">Медиана к гипотенузе равна её половине.</div></div></a>
+                </div>
+
+                <h3 class="subsection-heading">🔷 Равенство треугольников</h3>
+                <div class="figures-grid">
+                    <a href="theorems/congruence-1.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">I признак (по двум сторонам и углу)</div><div class="theorem-formula">AB=A₁B₁, AC=A₁C₁, ∠A=∠A₁</div><div class="theorem-desc">Две стороны и угол между ними.</div></div></a>
+                    <a href="theorems/congruence-2.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">II признак (по стороне и двум углам)</div><div class="theorem-formula">AB=A₁B₁, ∠A=∠A₁, ∠B=∠B₁</div><div class="theorem-desc">Сторона и два прилежащих угла.</div></div></a>
+                    <a href="theorems/congruence-3.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">III признак (по трём сторонам)</div><div class="theorem-formula">AB=A₁B₁, BC=B₁C₁, AC=A₁C₁</div><div class="theorem-desc">Три стороны соответственно равны.</div></div></a>
+                </div>
+
+                <h2 class="section-title">📐 Подобие треугольников</h2>
+                <div class="figures-grid">
+                    <a href="theorems/similarity-1.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">I признак (по двум углам)</div><div class="theorem-formula">∠A=∠A₁, ∠B=∠B₁ ⇒ ∆∾∆</div><div class="theorem-desc">Два угла одного треугольника равны двум углам другого.</div></div></a>
+                    <a href="theorems/similarity-2.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">II признак (по двум сторонам и углу)</div><div class="theorem-formula">a/a₁ = b/b₁, ∠C=∠C₁ ⇒ ∆∾∆</div><div class="theorem-desc">Две стороны пропорциональны, угол между ними равен.</div></div></a>
+                    <a href="theorems/similarity-3.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">III признак (по трём сторонам)</div><div class="theorem-formula">a/a₁ = b/b₁ = c/c₁ ⇒ ∆∾∆</div><div class="theorem-desc">Три стороны пропорциональны.</div></div></a>
+                    <a href="theorems/thales.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Фалеса</div><div class="theorem-formula">AD/DB = AE/EC</div><div class="theorem-desc">Параллельные прямые отсекают пропорциональные отрезки.</div></div></a>
+                    <a href="theorems/generalized-thales.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Обобщённая Фалеса</div><div class="theorem-formula">пропорциональность</div><div class="theorem-desc">Параллельные прямые на сторонах угла дают пропорциональные отрезки.</div></div></a>
+                    <a href="theorems/midline.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Средняя линия</div><div class="theorem-formula">MN ∥ AC, MN=½AC</div><div class="theorem-desc">Средняя линия параллельна третьей стороне и равна её половине.</div></div></a>
+                </div>
+
+                <h2 class="section-title">🔲 Четырёхугольники</h2>
+                <div class="figures-grid">
+                    <a href="theorems/polygon-angles.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Сумма углов n-угольника</div><div class="theorem-formula">Σ = (n−2)·180°</div><div class="theorem-desc">Сумма внутренних углов выпуклого n-угольника.</div></div></a>
+                    <a href="theorems/trapezoid-midline.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Средняя линия трапеции</div><div class="theorem-formula">m = (a+b)/2</div><div class="theorem-desc">Средняя линия трапеции равна полусумме оснований и параллельна им.</div></div></a>
+                    <a href="theorems/parallelogram.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Параллелограмм</div><div class="theorem-formula">AB=CD, BC=AD</div><div class="theorem-desc">Противоположные стороны равны; диагонали делятся пополам.</div></div></a>
+                    <a href="theorems/varignon.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Вариньона</div><div class="theorem-formula">параллелограмм</div><div class="theorem-desc">Середины сторон четырёхугольника — вершины параллелограмма.</div></div></a>
+                    <a href="theorems/ptolemy.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Птолемея</div><div class="theorem-formula">AC·BD = AB·CD + BC·AD</div><div class="theorem-desc">Произведение диагоналей вписанного четырёхугольника.</div></div></a>
+                    <a href="theorems/cyclic-quadrilateral.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Вписанный четырёхугольник</div><div class="theorem-formula">∠A+∠C = 180°</div><div class="theorem-desc">Сумма противоположных углов равна 180°.</div></div></a>
+                    <a href="theorems/brahmagupta.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Формула Брахмагупты</div><div class="theorem-formula">S = √((p−a)(p−b)(p−c)(p−d))</div><div class="theorem-desc">Площадь вписанного четырёхугольника через полупериметр.</div></div></a>
+                    <a href="theorems/tangential-quadrilateral.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Описанный (Пито)</div><div class="theorem-formula">AB+CD = BC+AD</div><div class="theorem-desc">Суммы противоположных сторон равны.</div></div></a>
+                </div>
+
+                <h2 class="section-title">⚪ Окружность</h2>
+                <div class="figures-grid">
+                    <a href="theorems/inscribed-angle.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Вписанный угол</div><div class="theorem-formula">∠ABC = ½∪AC</div><div class="theorem-desc">Вписанный угол равен половине дуги.</div></div></a>
+                    <a href="theorems/central-angle.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Центральный угол</div><div class="theorem-formula">∠AOB = ∪AB</div><div class="theorem-desc">Центральный угол равен дуге.</div></div></a>
+                    <a href="theorems/tangent-chord.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Угол между касательной и хордой</div><div class="theorem-formula">∠ = ½∪</div><div class="theorem-desc">Угол между касательной и хордой равен половине дуги.</div></div></a>
+                    <a href="theorems/tangent-secant.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Касательная и секущая</div><div class="theorem-formula">AB² = AC·AD</div><div class="theorem-desc">Квадрат касательной равен произведению секущей на внешнюю часть.</div></div></a>
+                    <a href="theorems/intersecting-chords.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Пересекающиеся хорды</div><div class="theorem-formula">AE·EB = CE·ED</div><div class="theorem-desc">Произведения отрезков хорд равны.</div></div></a>
+                    <a href="theorems/tangent-segments.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Отрезки касательных</div><div class="theorem-formula">AB = AC</div><div class="theorem-desc">Касательные из одной точки равны.</div></div></a>
+                </div>
+
+                <h2 class="section-title">📍 Замечательные точки и линии</h2>
+                <div class="figures-grid">
+                    <a href="theorems/centroid.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Центроид</div><div class="theorem-formula">2:1</div><div class="theorem-desc">Точка пересечения медиан, делит их 2:1.</div></div></a>
+                    <a href="theorems/incenter.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Инцентр</div><div class="theorem-formula">биссектрисы</div><div class="theorem-desc">Центр вписанной окружности.</div></div></a>
+                    <a href="theorems/circumcenter.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Центр описанной</div><div class="theorem-formula">серединные ⟂</div><div class="theorem-desc">Точка пересечения серединных перпендикуляров.</div></div></a>
+                    <a href="theorems/orthocenter.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Ортоцентр</div><div class="theorem-formula">H</div><div class="theorem-desc">Точка пересечения высот.</div></div></a>
+                    <a href="theorems/euler-line.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Прямая Эйлера</div><div class="theorem-formula">O, G, H</div><div class="theorem-desc">Центроид, ортоцентр и центр описанной лежат на одной прямой.</div></div></a>
+                    <a href="theorems/nine-point-circle.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Окружность 9 точек</div><div class="theorem-formula">9 точек</div><div class="theorem-desc">Середины сторон, основания высот и середины отрезков от ортоцентра.</div></div></a>
+                    <a href="theorems/gergonne-point.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Точка Жергонна</div><div class="theorem-formula">Gₑ</div><div class="theorem-desc">Пересечение чевиан к точкам касания вписанной окружности.</div></div></a>
+                    <a href="theorems/nagel-point.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Точка Нагеля</div><div class="theorem-formula">Nₐ</div><div class="theorem-desc">Пересечение чевиан к точкам касания вневписанных окружностей.</div></div></a>
+                </div>
+
+                <h2 class="section-title">📚 Классические теоремы</h2>
+                <div class="figures-grid">
+                    <a href="theorems/ceva.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Чевы</div><div class="theorem-formula">(BD/DC)·(CE/EA)·(AF/FB)=1</div><div class="theorem-desc">Чевианы пересекаются в одной точке.</div></div></a>
+                    <a href="theorems/menelaus.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Менелая</div><div class="theorem-formula">(BD/DC)·(CE/EA)·(AF/FB)=1</div><div class="theorem-desc">Точки на сторонах лежат на одной прямой.</div></div></a>
+                    <a href="theorems/van-aubel.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Ван-Обеля</div><div class="theorem-formula">AF/FB + AE/EC = AD/OD</div><div class="theorem-desc">Связь отношений для чевиан.</div></div></a>
+                    <a href="theorems/desargues.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Дезарга</div><div class="theorem-formula">перспектива</div><div class="theorem-desc">Перспективные треугольники.</div></div></a>
+                    <a href="theorems/pascal.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Паскаля</div><div class="theorem-formula">шестиугольник</div><div class="theorem-desc">Точки пересечения противоположных сторон вписанного шестиугольника коллинеарны.</div></div></a>
+                    <a href="theorems/brianchon.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Брианшона</div><div class="theorem-formula">диагонали</div><div class="theorem-desc">Главные диагонали описанного шестиугольника пересекаются в одной точке.</div></div></a>
+                    <a href="theorems/simson.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Прямая Симсона</div><div class="theorem-formula">проекции</div><div class="theorem-desc">Основания перпендикуляров из точки описанной окружности коллинеарны.</div></div></a>
+                    <a href="theorems/gauss.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Прямая Гаусса</div><div class="theorem-formula">середины</div><div class="theorem-desc">Середины диагоналей полного четырёхсторонника коллинеарны.</div></div></a>
+                    <a href="theorems/newton.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Ньютона</div><div class="theorem-formula">центр</div><div class="theorem-desc">В описанном четырёхугольнике центр вписанной окружности лежит на прямой Ньютона.</div></div></a>
+                    <a href="theorems/morley.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Морли</div><div class="theorem-formula">трисектрисы</div><div class="theorem-desc">Трисектрисы углов образуют равносторонний треугольник.</div></div></a>
+                    <a href="	theorems/feuerbach.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Фейербаха</div><div class="theorem-formula">окр. 9 точек</div><div class="theorem-desc">Окружность 9 точек касается вписанной и вневписанных.</div></div></a>
+                    <a href="theorems/pappus.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Паппа</div><div class="theorem-formula">коллинеарны</div><div class="theorem-desc">Точки пересечения соответственных прямых коллинеарны.</div></div></a>
+                    <a href="	theorems/carnot.html" class="theorem-card-link"><div class="theorem-card"><div class="theorem-name">Теорема Карно</div><div class="theorem-formula">перпендикуляры</div><div class="theorem-desc">Критерий пересечения перпендикуляров к сторонам.</div></div></a>
+                </div>
+
+                <div class="divider-light"></div>
+                <p class="footer-note">Справочник по теоремам планиметрии</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>
