@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
+  <rect width="500" height="400" fill="#f5f7fa" rx="12" />
+
+  <!-- Четырёхугольник ABCD -->
+  <line x1="100" y1="300" x2="380" y2="320" stroke="#1E2321" stroke-width="2" />
+  <line x1="380" y1="320" x2="420" y2="120" stroke="#1E2321" stroke-width="2" />
+  <line x1="420" y1="120" x2="140" y2="100" stroke="#1E2321" stroke-width="2" />
+  <line x1="140" y1="100" x2="100" y2="300" stroke="#1E2321" stroke-width="2" />
+
+  <!-- Диагонали -->
+  <line x1="100" y1="300" x2="420" y2="120" stroke="#1E2321" stroke-width="1" stroke-dasharray="4,2" opacity="0.5" />
+  <line x1="140" y1="100" x2="380" y2="320" stroke="#1E2321" stroke-width="1" stroke-dasharray="4,2" opacity="0.5" />
+
+  <!-- Параллелограмм Вариньона MNPK -->
+  <line x1="240" y1="310" x2="400" y2="220" stroke="#c2410c" stroke-width="2.5" />
+  <line x1="400" y1="220" x2="280" y2="110" stroke="#c2410c" stroke-width="2.5" />
+  <line x1="280" y1="110" x2="120" y2="200" stroke="#c2410c" stroke-width="2.5" />
+  <line x1="120" y1="200" x2="240" y2="310" stroke="#c2410c" stroke-width="2.5" />
+
+  <!-- Вершины исходного четырёхугольника -->
+  <circle cx="100" cy="300" r="4" fill="#7A9D8C" />
+  <text x="75" y="325" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">A</text>
+
+  <circle cx="380" cy="320" r="4" fill="#7A9D8C" />
+  <text x="395" y="345" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">B</text>
+
+  <circle cx="420" cy="120" r="4" fill="#7A9D8C" />
+  <text x="435" y="115" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">C</text>
+
+  <circle cx="140" cy="100" r="4" fill="#7A9D8C" />
+  <text x="115" y="95" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="600" fill="#1E2321">D</text>
+
+  <!-- Середины сторон -->
+  <circle cx="240" cy="310" r="4" fill="#c2410c" />
+  <text x="225" y="335" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#c2410c">M</text>
+
+  <circle cx="400" cy="220" r="4" fill="#c2410c" />
+  <text x="410" y="215" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#c2410c">N</text>
+
+  <circle cx="280" cy="110" r="4" fill="#c2410c" />
+  <text x="290" y="105" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#c2410c">P</text>
+
+  <circle cx="120" cy="200" r="4" fill="#c2410c" />
+  <text x="90" y="205" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#c2410c">K</text>
+
+  <!-- Формула -->
+  <text x="250" y="395" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#1E2321" text-anchor="middle">MNPK — параллелограмм    |    S_MNPK = ½·S_ABCD</text>
+</svg>
