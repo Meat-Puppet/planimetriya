@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теоремы планиметрии | Интерактивный справочник</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        .theorem-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .theorem-card-link:hover .theorem-card {
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="header">
+            <div class="site-title">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="active">Главная</a>
+                <a href="theorems.html">Все теоремы</a>
+                <a href="formulas.html">Формулы</a>
+                <a href="tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <div class="sub-header">
+            <h1 class="hero-title">Теоремы планиметрии</h1>
+            <p class="hero-subtitle">Интерактивный справочник для изучения геометрии на плоскости</p>
+            <div class="hero-buttons">
+                <a href="theorems.html" class="hero-btn active">Теоремы</a>
+                <a href="formulas.html" class="hero-btn">Формулы</a>
+                <a href="tasks.html" class="hero-btn">Задачи</a>
+            </div>
+        </div>
+
+        <main>
+            <div class="content-container">
+                <h2 class="section-title">Треугольники</h2>
+                
+                <div class="figures-grid">
+                    <a href="theorems/pythagoras.html" class="theorem-card-link">
+                        <div class="theorem-card">
+                            <div class="theorem-name">Теорема Пифагора</div>
+                            <div class="theorem-formula">c² = a² + b²</div>
+                            <div class="theorem-desc">В прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов.</div>
+                        </div>
+                    </a>
+                    
+                    <a href="theorems/sine.html" class="theorem-card-link">
+                        <div class="theorem-card">
+                            <div class="theorem-name">Теорема синусов</div>
+                            <div class="theorem-formula">a/sin A = b/sin B = c/sin C = 2R</div>
+                            <div class="theorem-desc">Стороны треугольника пропорциональны синусам противолежащих углов.</div>
+                        </div>
+                    </a>
+                    
+                    <a href="theorems/cosine.html" class="theorem-card-link">
+                        <div class="theorem-card">
+                            <div class="theorem-name">Теорема косинусов</div>
+                            <div class="theorem-formula">c² = a² + b² − 2ab·cos C</div>
+                            <div class="theorem-desc">Квадрат стороны равен сумме квадратов двух других минус удвоенное произведение на косинус угла между ними.</div>
+                        </div>
+                    </a>
+                </div>
+
+                <h2 class="section-title">Четырёхугольники</h2>
+                
+                <div class="figures-grid">
+                    <a href="theorems/ptolemy.html" class="theorem-card-link">
+                        <div class="theorem-card">
+                            <div class="theorem-name">Теорема Птолемея</div>
+                            <div class="theorem-formula">AC·BD = AB·CD + BC·AD</div>
+                            <div class="theorem-desc">Произведение диагоналей вписанного четырёхугольника равно сумме произведений противоположных сторон.</div>
+                        </div>
+                    </a>
+                    
+                    <a href="theorems/varignon.html" class="theorem-card-link">
+                        <div class="theorem-card">
+                            <div class="theorem-name">Теорема Вариньона</div>
+                            <div class="theorem-formula">параллелограмм</div>
+                            <div class="theorem-desc">Середины сторон любого четырёхугольника являются вершинами параллелограмма.</div>
+                        </div>
+                    </a>
+                    
+                    <a href="theorems/parallelogram.html" class="theorem-card-link">
+                        <div class="theorem-card">
+                            <div class="theorem-name">Свойства параллелограмма</div>
+                            <div class="theorem-formula">AB = CD, BC = AD</div>
+                            <div class="theorem-desc">Противоположные стороны равны и параллельны. Диагонали точкой пересечения делятся пополам.</div>
+                        </div>
+                    </a>
+                </div>
+
+                <h2 class="section-title">Окружность</h2>
+                
+                <div class="figures-grid">
+                    <a href="theorems/inscribed-angle.html" class="theorem-card-link">
+                        <div class="theorem-card">
+                            <div class="theorem-name">Вписанный угол</div>
+                            <div class="theorem-formula">∠ABC = ½·∪AC</div>
+                            <div class="theorem-desc">Вписанный угол равен половине дуги, на которую опирается.</div>
+                        </div>
+                    </a>
+                    
+                    <a href="theorems/tangent-secant.html" class="theorem-card-link">
+                        <div class="theorem-card">
+                            <div class="theorem-name">Касательная и секущая</div>
+                            <div class="theorem-formula">AB² = AC·AD</div>
+                            <div class="theorem-desc">Квадрат касательной равен произведению секущей на её внешнюю часть.</div>
+                        </div>
+                    </a>
+                    
+                    <a href="theorems/intersecting-chords.html" class="theorem-card-link">
+                        <div class="theorem-card">
+                            <div class="theorem-name">Пересекающиеся хорды</div>
+                            <div class="theorem-formula">AE·EB = CE·ED</div>
+                            <div class="theorem-desc">Произведения отрезков пересекающихся хорд равны.</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="divider-light"></div>
+                <p class="footer-note">Справочник по основным теоремам школьного курса планиметрии</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>
