@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема тангенсов · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 30px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder p {
+            color: #64748b;
+            font-size: 16px;
+            margin: 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 22px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема тангенсов</h1>
+                    
+                    <div class="theorem-formula-large">
+                        (a − b) / (a + b) = tg((A − B)/2) / tg((A + B)/2)
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Разность двух сторон треугольника относится к их сумме, как тангенс полуразности противолежащих углов относится к тангенсу полусуммы этих углов.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span> со сторонами:</p>
+                        <p><span class="formula-inline">a = BC</span> — сторона, противолежащая углу A</p>
+                        <p><span class="formula-inline">b = AC</span> — сторона, противолежащая углу B</p>
+                        <p><span class="formula-inline">c = AB</span> — сторона, противолежащая углу C</p>
+                        <p>Тогда для любых двух сторон и противолежащих углов:</p>
+                        <p><span class="formula-inline">(a − b) / (a + b) = tg((A − B)/2) / tg((A + B)/2)</span></p>
+                        <p><span class="formula-inline">(b − c) / (b + c) = tg((B − C)/2) / tg((B + C)/2)</span></p>
+                        <p><span class="formula-inline">(c − a) / (c + a) = tg((C − A)/2) / tg((C + A)/2)</span></p>
+                    </div>
+                    
+                    <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+                    <div class="image-placeholder">
+                       <img src="images/тангенсов.svg" alt="Чертёж к теореме тангенсов" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> По теореме синусов: a / sin A = b / sin B = 2R.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Выразим стороны через синусы: a = 2R·sin A, b = 2R·sin B.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Подставим в левую часть формулы: (a − b) / (a + b) = (sin A − sin B) / (sin A + sin B).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Используем формулы разности и суммы синусов: sin A − sin B = 2·sin((A − B)/2)·cos((A + B)/2).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> sin A + sin B = 2·sin((A + B)/2)·cos((A − B)/2).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Подставляем: (sin A − sin B) / (sin A + sin B) = [sin((A − B)/2)·cos((A + B)/2)] / [sin((A + B)/2)·cos((A − B)/2)].
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Группируем: = [sin((A − B)/2) / cos((A − B)/2)] · [cos((A + B)/2) / sin((A + B)/2)] = tg((A − B)/2) / tg((A + B)/2).
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Теорема тангенсов позволяет находить неизвестные стороны и углы треугольника, если известны две стороны и угол между ними, либо два угла и сторона.</li>
+                            <li>Если a = b, то A = B (равнобедренный треугольник) — формула даёт tg((A − B)/2) = 0.</li>
+                            <li>Теорема особенно удобна при логарифмических вычислениях, так как заменяет умножение и деление сложением и вычитанием.</li>
+                            <li>В комбинации с теоремой синусов позволяет решать треугольники без использования косинусов.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольнике даны стороны a = 10, b = 7 и угол C = 60°. Найдите углы A и B.</p>
+                        <p><em>Решение:</em> Сначала найдём A + B = 180° − 60° = 120°. Затем по теореме тангенсов: (10 − 7) / (10 + 7) = tg((A − B)/2) / tg(60°).</p>
+                        <p>3/17 = tg((A − B)/2) / √3 ⇒ tg((A − B)/2) = 3√3/17 ≈ 0,305 ⇒ (A − B)/2 ≈ 17°.</p>
+                        <p>Решаем систему: A + B = 120°, A − B = 34° ⇒ A = 77°, B = 43°.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В треугольнике даны углы A = 80°, B = 40° и сторона a = 12. Найдите сторону b.</p>
+                        <p><em>Решение:</em> По теореме тангенсов: (12 − b) / (12 + b) = tg(20°) / tg(60°) = tg 20° / √3 ≈ 0,364 / 1,732 ≈ 0,21.</p>
+                        <p>12 − b = 0,21·(12 + b) ⇒ 12 − b = 2,52 + 0,21b ⇒ 9,48 = 1,21b ⇒ b ≈ 7,83.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема тангенсов была открыта арабским математиком Абу-ль-Вафой в X веке, хотя некоторые источники приписывают её персидскому астроному Ал-Баттани (IX век).</p>
+                        <p>В Европе теорема стала известна благодаря работам Региомонтана (XV век) и Франсуа Виета (XVI век).</p>
+                        <p>До появления калькуляторов теорема тангенсов широко использовалась в навигации и астрономии вместе с логарифмическими таблицами, так как позволяла избегать громоздких умножений.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Теорема тангенсов менее известна, чем теоремы синусов и косинусов, но очень удобна при решении треугольников по двум сторонам и углу между ними.</li>
+                            <li>В эпоху парусного флота теорема тангенсов была основным инструментом штурманов для прокладки курса.</li>
+                            <li>Теорема тангенсов эквивалентна формуле Мольвейде, используемой в сферической тригонометрии.</li>
+                            <li>В некоторых странах теорему тангенсов называют «формулой Региомонтана».</li>
+                            <li>Современные навигационные системы (GPS) используют алгоритмы, основанные на расширенных версиях теоремы тангенсов для сферы и эллипсоида.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема тангенсов · Удобный инструмент для решения треугольников</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

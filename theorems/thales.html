@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Фалеса · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 32px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 24px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Фалеса</h1>
+                    
+                    <div class="theorem-formula-large">
+                        OA/OB = OC/OD &nbsp;&nbsp;|&nbsp;&nbsp; OA/AB = OC/CD
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Если на одной из сторон угла отложить равные отрезки и через их концы провести параллельные прямые, пересекающие другую сторону угла, то на другой стороне также отложатся равные отрезки.</p>
+                        <p>В общем виде: параллельные прямые, пересекающие стороны угла, отсекают на них пропорциональные отрезки.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан угол с вершиной <span class="formula-inline">O</span>. На одной стороне отложены точки <span class="formula-inline">A</span> и <span class="formula-inline">B</span>, на другой — <span class="formula-inline">C</span> и <span class="formula-inline">D</span>.</p>
+                        <p><span class="formula-inline">AC ∥ BD</span> — прямые параллельны.</p>
+                        <p>Тогда: <span class="formula-inline">OA/OB = OC/OD</span></p>
+                        <p>Также верны пропорции: <span class="formula-inline">OA/AB = OC/CD</span> и <span class="formula-inline">OB/AB = OD/CD</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/фалеса.svg" alt="Чертёж к теореме Фалеса" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Рассмотрим угол с вершиной O. Пусть на одной стороне отложены точки A и B, на другой — C и D, причём AC ∥ BD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Проведём через точку A прямую, параллельную OD, до пересечения с BD в точке E.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Четырёхугольник ACDE — параллелограмм (AC ∥ DE, AE ∥ CD). Следовательно, AE = CD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Рассмотрим треугольники OBD и ABE. У них: ∠O — общий, ∠OBD = ∠ABE (вертикальные).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> По I признаку подобия ∆OBD ∾ ∆ABE. Из подобия: OB/AB = OD/AE.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Подставляя AE = CD, получаем OB/AB = OD/CD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Преобразуя пропорцию, получаем OA/OB = OC/OD.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li><strong>Обобщённая теорема Фалеса:</strong> параллельные прямые, пересекающие стороны угла, отсекают пропорциональные отрезки на обеих сторонах.</li>
+                            <li>Средняя линия треугольника параллельна третьей стороне и равна её половине.</li>
+                            <li>Средняя линия трапеции параллельна основаниям и равна их полусумме.</li>
+                            <li>Теорема Фалеса лежит в основе доказательства признаков подобия треугольников.</li>
+                            <li>С помощью теоремы Фалеса можно делить отрезок на любое число равных частей.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> На сторонах угла O отложены точки A, B и C, D так, что OA = 3, OB = 5, OC = 4,5. Найдите OD, если AC ∥ BD.</p>
+                        <p><em>Решение:</em> По теореме Фалеса: OA/OB = OC/OD ⇒ 3/5 = 4,5/OD ⇒ OD = 5·4,5/3 = 7,5.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Разделите отрезок AB длиной 10 см на 3 равные части с помощью циркуля и линейки.</p>
+                        <p><em>Решение:</em> Проводим луч из A под острым углом. Откладываем на нём 3 равных отрезка. Соединяем конец последнего с B и проводим параллельные прямые через точки деления. По теореме Фалеса AB разделится на 3 равные части.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> В треугольнике ABC проведена средняя линия MN. Докажите, что MN ∥ BC и MN = BC/2.</p>
+                        <p><em>Решение:</em> По теореме Фалеса из AM = MB следует AN = NC. По обратной теореме Фалеса MN ∥ BC. Из подобия треугольников MN = BC/2.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь древнегреческого математика и философа Фалеса Милетского (около 624–546 гг. до н.э.), одного из «семи мудрецов» Древней Греции.</p>
+                        <p>Согласно легенде, Фалес использовал эту теорему для измерения высоты египетских пирамид. Он дождался момента, когда длина его тени стала равна его росту, и измерил длину тени пирамиды.</p>
+                        <p>Теорема Фалеса — одна из первых геометрических теорем, доказанных в истории математики. Она положила начало учению о подобии фигур.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Фалес Милетский считается первым математиком, который начал доказывать геометрические утверждения, а не просто формулировать их.</li>
+                            <li>Теорема Фалеса работает не только для угла, но и для любых двух пересекающихся прямых.</li>
+                            <li>В некоторых странах теоремой Фалеса называют утверждение о том, что угол, опирающийся на диаметр окружности, — прямой.</li>
+                            <li>Теорема Фалеса лежит в основе работы делительной головки — устройства для точного деления окружностей в машиностроении.</li>
+                            <li>С помощью теоремы Фалеса можно построить четвёртый пропорциональный отрезок к трём данным.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Фалеса · Пропорциональные отрезки на сторонах угла</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Ньютона · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 28px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 20px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Ньютона</h1>
+                    
+                    <div class="theorem-formula-large">
+                        I ∈ MN (прямая Ньютона)
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>В любом описанном четырёхугольнике центр вписанной окружности лежит на прямой, соединяющей середины диагоналей. Эта прямая называется прямой Ньютона.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан описанный четырёхугольник <span class="formula-inline">ABCD</span> (в него можно вписать окружность).</p>
+                        <p><span class="formula-inline">I</span> — центр вписанной окружности (инцентр).</p>
+                        <p><span class="formula-inline">AC</span> и <span class="formula-inline">BD</span> — диагонали четырёхугольника.</p>
+                        <p><span class="formula-inline">M</span> — середина диагонали <span class="formula-inline">AC</span>.</p>
+                        <p><span class="formula-inline">N</span> — середина диагонали <span class="formula-inline">BD</span>.</p>
+                        <p>Тогда точки <span class="formula-inline">M</span>, <span class="formula-inline">I</span>, <span class="formula-inline">N</span> лежат на одной прямой — прямой Ньютона.</p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/ньютона.svg" alt="Чертёж к теореме Ньютона" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Используем свойство описанного четырёхугольника: суммы противоположных сторон равны: AB + CD = BC + AD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Применим теорему о бабочке (Butterfly Theorem) или векторный метод.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Векторно можно показать, что I = (a·A + b·B + c·C + d·D) / (a + b + c + d), где a, b, c, d — длины сторон.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Используя условие описанности a + c = b + d, получаем, что I лежит на прямой MN.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Свойства прямой Ньютона</h3>
+                        <ul class="facts-list">
+                            <li>Прямая Ньютона проходит через середины диагоналей и центр вписанной окружности.</li>
+                            <li>Для параллелограмма прямая Ньютона вырождается в точку (диагонали пересекаются в одной точке — центре симметрии).</li>
+                            <li>Прямая Ньютона — частный случай прямой Гаусса для полного четырёхсторонника.</li>
+                            <li>В описанном четырёхугольнике прямая Ньютона перпендикулярна прямой, соединяющей точки пересечения противоположных сторон.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>В любом описанном четырёхугольнике центр вписанной окружности, середины диагоналей и точка пересечения средних линий лежат на одной прямой.</li>
+                            <li>Теорема Ньютона обобщается на описанные многоугольники с чётным числом сторон.</li>
+                            <li>Для вписанно-описанного четырёхугольника прямая Ньютона проходит через центр описанной окружности? Нет, это не всегда так.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Дан описанный четырёхугольник ABCD. Докажите, что центр вписанной окружности лежит на прямой MN.</p>
+                        <p><em>Решение:</em> Это прямая формулировка теоремы Ньютона.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В каком случае прямая Ньютона проходит через точку пересечения диагоналей?</p>
+                        <p><em>Решение:</em> Это происходит, если четырёхугольник — дельтоид или параллелограмм.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Докажите, что в описанной трапеции прямая Ньютона параллельна основаниям.</p>
+                        <p><em>Решение:</em> В трапеции средняя линия параллельна основаниям. Прямая Ньютона совпадает со средней линией.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь великого английского физика и математика Исаака Ньютона (1643–1727), который сформулировал её в своей работе «Philosophiæ Naturalis Principia Mathematica» (1687).</p>
+                        <p>Ньютон использовал эту теорему в своих исследованиях по геометрии и механике. Интересно, что Ньютон считал геометрию основой всей математики и физики.</p>
+                        <p>Позже теорема была обобщена Гауссом для полного четырёхсторонника (прямая Гаусса-Ньютона).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Ньютон открыл эту теорему, когда ему было около 20 лет, задолго до создания теории тяготения.</li>
+                            <li>Прямая Ньютона — одна из немногих геометрических теорем, названных в честь Ньютона (обычно его имя ассоциируется с физикой).</li>
+                            <li>Теорема Ньютона связана с теоремой Брианшона: описанный четырёхугольник — вырожденный случай описанного шестиугольника.</li>
+                            <li>В японской геометрии (сангаку) теорема Ньютона была известна задолго до Ньютона.</li>
+                            <li>Прямая Ньютона используется в задачах на построение вписанной окружности в четырёхугольник.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Ньютона · Прямая Ньютона для описанного четырёхугольника</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

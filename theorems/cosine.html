@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема косинусов · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder p {
+            color: #64748b;
+            font-size: 16px;
+            margin: 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 24px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема косинусов</h1>
+                    
+                    <div class="theorem-formula-large">
+                        c² = a² + b² − 2ab·cos C
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Квадрат стороны треугольника равен сумме квадратов двух других сторон минус удвоенное произведение этих сторон на косинус угла между ними.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span> со сторонами:</p>
+                        <p><span class="formula-inline">a = BC</span> — сторона, противолежащая углу A</p>
+                        <p><span class="formula-inline">b = AC</span> — сторона, противолежащая углу B</p>
+                        <p><span class="formula-inline">c = AB</span> — сторона, противолежащая углу C</p>
+                        <p>Тогда для любой стороны можно записать:</p>
+                        <p><span class="formula-inline">a² = b² + c² − 2bc·cos A</span></p>
+                        <p><span class="formula-inline">b² = a² + c² − 2ac·cos B</span></p>
+                        <p><span class="formula-inline">c² = a² + b² − 2ab·cos C</span></p>
+                    </div>
+                    
+                    <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+                    <div class="image-placeholder">
+                        <img src="images/косинусов.svg" alt="Чертёж к теореме косинусов" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Рассмотрим треугольник ABC. Опустим высоту BD из вершины B на сторону AC (или её продолжение).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Пусть AD = x, тогда DC = |b − x| (если угол A острый) или DC = b + x (если угол A тупой).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Из прямоугольного треугольника ABD: BD² = c² − x², и x = c·cos A.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Из прямоугольного треугольника BDC: a² = BD² + DC² = (c² − x²) + (b − x)².
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Раскроем скобки: a² = c² − x² + b² − 2bx + x² = b² + c² − 2bx.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Подставим x = c·cos A: a² = b² + c² − 2bc·cos A.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Аналогично доказываются формулы для других сторон.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li><strong>Теорема Пифагора</strong> — частный случай теоремы косинусов при C = 90°: c² = a² + b² − 2ab·cos 90° = a² + b².</li>
+                            <li>Косинус угла можно выразить через стороны: cos C = (a² + b² − c²) / (2ab).</li>
+                            <li>Если c² < a² + b², то угол C острый (cos C > 0).</li>
+                            <li>Если c² > a² + b², то угол C тупой (cos C < 0).</li>
+                            <li>Если c² = a² + b², то угол C прямой (cos C = 0).</li>
+                            <li>Теорема косинусов позволяет найти третью сторону по двум сторонам и углу между ними.</li>
+                            <li>Позволяет найти любой угол по трём известным сторонам.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольнике даны стороны a = 5, b = 7 и угол между ними C = 60°. Найдите сторону c.</p>
+                        <p><em>Решение:</em> c² = a² + b² − 2ab·cos C = 25 + 49 − 2·5·7·0,5 = 74 − 35 = 39 ⇒ c = √39 ≈ 6,24.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В треугольнике даны стороны a = 6, b = 8, c = 10. Найдите угол C.</p>
+                        <p><em>Решение:</em> cos C = (a² + b² − c²) / (2ab) = (36 + 64 − 100) / (2·6·8) = 0 / 96 = 0 ⇒ C = 90° (треугольник прямоугольный).</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> В треугольнике даны стороны a = 4, b = 5, c = 7. Определите вид треугольника по углам.</p>
+                        <p><em>Решение:</em> Найдём косинус наибольшего угла (против стороны c): cos C = (16 + 25 − 49) / 40 = −8/40 = −0,2 < 0 ⇒ угол C тупой, треугольник тупоугольный.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема косинусов была известна ещё в Древней Греции. В «Началах» Евклида (III век до н.э.) она сформулирована в геометрическом виде для тупоугольных и остроугольных треугольников (Книга II, предложения 12 и 13).</p>
+                        <p>В алгебраической форме с использованием косинуса теорема появилась значительно позже. Французский математик Франсуа Виет (XVI век) использовал её в своих работах по тригонометрии.</p>
+                        <p>В арабском мире теорему косинусов активно применял Ал-Каши (XV век) для астрономических вычислений, поэтому в некоторых странах её называют «теоремой Ал-Каши».</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Теорема косинусов обобщает теорему Пифагора на произвольные треугольники.</li>
+                            <li>В навигации теорема косинусов используется для вычисления расстояний по координатам (формула гаверсинусов).</li>
+                            <li>В физике теорема косинусов применяется при сложении векторов и расчёте равнодействующей сил.</li>
+                            <li>Для сферических треугольников существует своя версия теоремы косинусов: cos c = cos a·cos b + sin a·sin b·cos C.</li>
+                            <li>Теорема косинусов лежит в основе метода триангуляции, используемого в геодезии и GPS-навигации.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема косинусов · Обобщение теоремы Пифагора</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

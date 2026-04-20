@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Отрезки касательных · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 26px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Отрезки касательных</h1>
+                    
+                    <div class="theorem-formula-large">
+                        AB = AC
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Отрезки касательных, проведённых из одной точки к окружности, равны.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть из точки <span class="formula-inline">A</span> вне окружности проведены две касательные к окружности.</p>
+                        <p><span class="formula-inline">AB</span> и <span class="formula-inline">AC</span> — отрезки касательных от точки <span class="formula-inline">A</span> до точек касания <span class="formula-inline">B</span> и <span class="formula-inline">C</span>.</p>
+                        <p><span class="formula-inline">O</span> — центр окружности.</p>
+                        <p>Тогда: <span class="formula-inline">AB = AC</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/отрезки-касательных.svg" alt="Чертёж к теореме об отрезках касательных" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Проведём радиусы OB и OC в точки касания.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> По свойству касательной, радиус перпендикулярен касательной: OB ⟂ AB, OC ⟂ AC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Рассмотрим прямоугольные треугольники ABO и ACO.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> У них: AO — общая гипотенуза.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Катеты OB и OC равны как радиусы окружности: OB = OC = R.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Прямоугольные треугольники равны по гипотенузе и катету.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Из равенства треугольников следует равенство соответствующих сторон: AB = AC.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Дополнительные свойства</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Из равенства треугольников также следует: ∠BAO = ∠CAO (луч AO — биссектриса угла BAC).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Также ∠BOA = ∠COA (луч AO делит угол BOC пополам).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Точка A, центр O и середины хорды BC лежат на одной прямой.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Центр окружности лежит на биссектрисе угла, образованного касательными.</li>
+                            <li>Прямая, соединяющая точку A с центром O, является осью симметрии фигуры, образованной касательными и окружностью.</li>
+                            <li>Четырёхугольник ABOC — дельтоид (две пары смежных равных сторон).</li>
+                            <li>Теорема лежит в основе доказательства теоремы Пито для описанного четырёхугольника.</li>
+                            <li>Длина касательной: AB = √(AO² − R²).</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Из точки A к окружности проведены две касательные AB и AC. AB = 12. Найдите AC.</p>
+                        <p><em>Решение:</em> По теореме об отрезках касательных: AC = AB = 12.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Точка A находится на расстоянии 13 от центра окружности радиуса 5. Найдите длину касательной.</p>
+                        <p><em>Решение:</em> AB = √(AO² − R²) = √(13² − 5²) = √(169 − 25) = √144 = 12.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Касательные AB и AC образуют угол 60°. Найдите угол BOC.</p>
+                        <p><em>Решение:</em> В четырёхугольнике ABOC углы при B и C прямые. Сумма углов 360°. ∠BOC = 360° − 90° − 90° − 60° = 120°.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Свойство равенства отрезков касательных было известно ещё древнегреческим математикам. Евклид в «Началах» (Книга III, Предложение 17 и следствия) рассматривает свойства касательных.</p>
+                        <p>Это свойство является частным случаем более общей теоремы о равенстве отрезков касательных, проведённых из одной точки к любой кривой (если кривая гладкая и выпуклая).</p>
+                        <p>Теорема об отрезках касательных — одна из самых простых и наглядных в геометрии окружности, часто используемая в задачах на построение.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Из равенства отрезков касательных следует, что точка A равноудалена от точек касания B и C.</li>
+                            <li>Вневписанная окружность треугольника касается одной стороны и продолжений двух других. Отрезки от вершины до точек касания равны полупериметру.</li>
+                            <li>С помощью этой теоремы можно построить окружность, касающуюся трёх данных прямых (вписанную или вневписанную).</li>
+                            <li>В физике аналогичное свойство используется при расчёте отражения света от сферического зеркала.</li>
+                            <li>Теорема об отрезках касательных — основа для доказательства того, что в любой треугольник можно вписать окружность.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Отрезки касательных · Фундаментальное свойство касательных</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

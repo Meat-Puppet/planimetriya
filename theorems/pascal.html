@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Паскаля · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 26px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 18px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Паскаля</h1>
+                    
+                    <div class="theorem-formula-large">
+                        P, Q, R коллинеарны (прямая Паскаля)
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Если шестиугольник вписан в окружность (или в любое коническое сечение), то точки пересечения трёх пар его противоположных сторон лежат на одной прямой. Эта прямая называется прямой Паскаля.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан вписанный в окружность шестиугольник <span class="formula-inline">ABCDEF</span>.</p>
+                        <p><span class="formula-inline">P = AB ∩ DE</span> — пересечение первой пары противоположных сторон.</p>
+                        <p><span class="formula-inline">Q = BC ∩ EF</span> — пересечение второй пары противоположных сторон.</p>
+                        <p><span class="formula-inline">R = CD ∩ FA</span> — пересечение третьей пары противоположных сторон.</p>
+                        <p>Тогда точки <span class="formula-inline">P</span>, <span class="formula-inline">Q</span>, <span class="formula-inline">R</span> лежат на одной прямой — прямой Паскаля.</p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/паскаля.svg" alt="Чертёж к теореме Паскаля" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Теорема Паскаля может быть доказана с помощью теоремы Менелая или методами проективной геометрии.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Рассмотрим треугольник, образованный пересечениями прямых AB, CD, EF. Применяем теорему Менелая к секущим.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Используя свойства вписанных углов и подобие треугольников, можно показать, что произведение отношений отрезков равно 1.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> По обратной теореме Менелая точки P, Q, R лежат на одной прямой.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Если шестиугольник вырождается в пятиугольник (одна сторона стягивается в точку), получается теорема о касательной.</li>
+                            <li>Если шестиугольник вырождается в четырёхугольник, получается теорема Паппа.</li>
+                            <li>Теорема Паскаля справедлива для любого конического сечения (эллипса, параболы, гиперболы), а не только для окружности.</li>
+                            <li>Теорема Паскаля двойственна теореме Брианшона.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Дан вписанный шестиугольник ABCDEF. Найдите прямую Паскаля.</p>
+                        <p><em>Решение:</em> Находим пересечения противоположных сторон: P = AB ∩ DE, Q = BC ∩ EF, R = CD ∩ FA. Прямая PQR — прямая Паскаля.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Что произойдёт, если две противоположные стороны параллельны?</p>
+                        <p><em>Решение:</em> Точка их пересечения уходит в бесконечность. Прямая Паскаля проходит через эту бесконечно удалённую точку, то есть параллельна этим сторонам.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Примените теорему Паскаля к шестиугольнику, у которого три вершины совпадают.</p>
+                        <p><em>Решение:</em> Получается треугольник с вписанной окружностью. Теорема Паскаля даёт соотношение между точками касания (теорема Брианшона).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь французского математика, физика и философа Блеза Паскаля (1623–1662). Он сформулировал и доказал эту теорему в возрасте 16 лет в 1639 году в работе «Essay pour les coniques».</p>
+                        <p>Паскаль назвал свою теорему «Hexagrammum Mysticum» (Мистический шестиугольник). Это был один из первых результатов проективной геометрии.</p>
+                        <p>Позже, в XIX веке, теорема Паскаля была обобщена на любые конические сечения и стала одной из фундаментальных теорем проективной геометрии.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Паскаль доказал эту теорему в 16 лет, что сделало его вундеркиндом в математике.</li>
+                            <li>Теорема Паскаля справедлива для любого порядка вершин шестиугольника (не обязательно в порядке обхода).</li>
+                            <li>Из теоремы Паскаля можно вывести все известные свойства конических сечений.</li>
+                            <li>Существует «мистический шестиугольник» Паскаля — конфигурация из 60 прямых, связанных с шестью точками на конике.</li>
+                            <li>Теорема Паскаля и теорема Брианшона — двойственные утверждения в проективной геометрии.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Паскаля · Прямая Паскаля для вписанного шестиугольника</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

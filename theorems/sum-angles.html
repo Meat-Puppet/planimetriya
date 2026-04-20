@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема о сумме углов треугольника · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 36px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder p {
+            color: #64748b;
+            font-size: 16px;
+            margin: 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 28px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема о сумме углов треугольника</h1>
+                    
+                    <div class="theorem-formula-large">
+                        ∠A + ∠B + ∠C = 180°
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Сумма внутренних углов любого треугольника равна 180° (или π радиан). Это одна из фундаментальных теорем евклидовой геометрии, справедливая для любого треугольника на плоскости.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span> с углами:</p>
+                        <p><span class="formula-inline">∠A</span> — угол при вершине A</p>
+                        <p><span class="formula-inline">∠B</span> — угол при вершине B</p>
+                        <p><span class="formula-inline">∠C</span> — угол при вершине C</p>
+                        <p>Тогда: <span class="formula-inline">∠A + ∠B + ∠C = 180°</span></p>
+                    </div>
+                    
+                    <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+                    <div class="image-placeholder">
+                        <img src="images/сумма-углов.svg" alt="Чертёж к теореме о сумме углов треугольника" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Рассмотрим треугольник ABC. Проведём через вершину B прямую, параллельную стороне AC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Угол ∠1 (между прямой и стороной AB) равен углу ∠A как накрест лежащие при параллельных прямых и секущей AB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Угол ∠2 (между прямой и стороной BC) равен углу ∠C как накрест лежащие при параллельных прямых и секущей BC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Углы ∠1, ∠B и ∠2 образуют развёрнутый угол, то есть их сумма равна 180°.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Заменяя ∠1 на ∠A и ∠2 на ∠C, получаем: ∠A + ∠B + ∠C = 180°.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>В любом треугольнике не может быть более одного прямого или тупого угла.</li>
+                            <li>Если два угла одного треугольника соответственно равны двум углам другого, то и третьи углы равны.</li>
+                            <li>Внешний угол треугольника равен сумме двух внутренних углов, не смежных с ним: ∠внеш = ∠A + ∠B.</li>
+                            <li>В равностороннем треугольнике все углы равны 60°.</li>
+                            <li>В прямоугольном треугольнике сумма острых углов равна 90°.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольнике два угла равны 50° и 60°. Найдите третий угол.</p>
+                        <p><em>Решение:</em> 180° − (50° + 60°) = 180° − 110° = 70°.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В прямоугольном треугольнике один из острых углов равен 35°. Найдите второй острый угол.</p>
+                        <p><em>Решение:</em> 90° − 35° = 55°.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Углы треугольника пропорциональны числам 2 : 3 : 4. Найдите все углы.</p>
+                        <p><em>Решение:</em> 2x + 3x + 4x = 180°, 9x = 180°, x = 20°. Углы: 40°, 60°, 80°.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема о сумме углов треугольника была известна ещё в Древнем Египте и Вавилоне. Однако строгое доказательство впервые появилось в «Началах» Евклида (около 300 г. до н.э.). Эта теорема эквивалентна пятому постулату Евклида (аксиоме параллельности) и является одной из ключевых в евклидовой геометрии.</p>
+                        <p>В неевклидовых геометриях (например, на сфере) сумма углов треугольника может быть больше или меньше 180°.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Сумма углов треугольника в градусах равна 180, в радианах — π.</li>
+                            <li>Если сложить углы любого треугольника, вырезанного из бумаги, и приложить их друг к другу, они всегда образуют прямую линию.</li>
+                            <li>Теорема о сумме углов треугольника лежит в основе тригонометрии и многих разделов математики.</li>
+                            <li>В сферической геометрии сумма углов треугольника всегда больше 180° (например, треугольник с тремя прямыми углами имеет сумму 270°).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема о сумме углов треугольника · Базовая теорема планиметрии</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

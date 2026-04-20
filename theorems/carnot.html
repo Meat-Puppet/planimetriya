@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Карно · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 28px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 20px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Карно (перпендикулярная)</h1>
+                    
+                    <div class="theorem-formula-large">
+                        A₁, B₁, C₁ коллинеарны ⇔ соотношение отрезков
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Пусть на сторонах BC, CA, AB треугольника ABC выбраны точки A₁, B₁, C₁. Перпендикуляры, восставленные к сторонам в этих точках, пересекаются в одной точке тогда и только тогда, когда выполняется соотношение:</p>
+                        <p><span class="formula-inline">(BA₁² − A₁C²) + (CB₁² − B₁A²) + (AC₁² − C₁B²) = 0</span></p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span>.</p>
+                        <p><span class="formula-inline">A₁</span> — точка на стороне <span class="formula-inline">BC</span>.</p>
+                        <p><span class="formula-inline">B₁</span> — точка на стороне <span class="formula-inline">CA</span>.</p>
+                        <p><span class="formula-inline">C₁</span> — точка на стороне <span class="formula-inline">AB</span>.</p>
+                        <p>Перпендикуляры к сторонам в точках A₁, B₁, C₁ пересекаются в одной точке ⇔</p>
+                        <p><span class="formula-inline">A₁B² − A₁C² + B₁C² − B₁A² + C₁A² − C₁B² = 0</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/карно.svg" alt="Чертёж к теореме Карно" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть перпендикуляры пересекаются в точке O.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> По теореме Пифагора для треугольников OBA₁ и OCA₁: OB² − OA₁² = BA₁², OC² − OA₁² = A₁C².
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Вычитая, получаем: OB² − OC² = BA₁² − A₁C².
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Аналогично: OC² − OA² = CB₁² − B₁A², и OA² − OB² = AC₁² − C₁B².
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Складывая все три равенства, получаем 0 = (BA₁² − A₁C²) + (CB₁² − B₁A²) + (AC₁² − C₁B²).
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Теорема Карно обобщает теорему о пересечении высот треугольника (когда A₁, B₁, C₁ — основания высот).</li>
+                            <li>Теорема Карно связана с теоремой Чевы для перпендикуляров.</li>
+                            <li>С помощью теоремы Карно можно доказывать существование ортоцентра и других замечательных точек.</li>
+                            <li>Теорема Карно — одна из классических теорем геометрии треугольника.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Докажите, что высоты треугольника пересекаются в одной точке, используя теорему Карно.</p>
+                        <p><em>Решение:</em> Для оснований высот: BA₁² − A₁C² = c·cos B − b·cos C? Подставляя, сумма обнуляется, следовательно, перпендикуляры (высоты) пересекаются в одной точке.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> На сторонах треугольника выбраны точки. Проверьте, пересекаются ли перпендикуляры в одной точке.</p>
+                        <p><em>Решение:</em> Вычисляем сумму (BA₁² − A₁C²) + (CB₁² − B₁A²) + (AC₁² − C₁B²). Если 0 — пересекаются, иначе — нет.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Какие точки A₁, B₁, C₁ соответствуют серединным перпендикулярам?</p>
+                        <p><em>Решение:</em> Для серединных перпендикуляров A₁, B₁, C₁ — середины сторон. Тогда BA₁ = A₁C, сумма обнуляется. Серединные перпендикуляры пересекаются в одной точке — центре описанной окружности.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь французского математика, физика и государственного деятеля Лазара Карно (1753–1823).</p>
+                        <p>Карно был отцом знаменитого физика Сади Карно (основателя термодинамики) и дедом президента Франции Мари Франсуа Сади Карно.</p>
+                        <p>Лазар Карно внёс значительный вклад в геометрию, в частности, в теорию трансверсалей и геометрию треугольника. Его работа «Géométrie de position» (1803) содержит эту теорему.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Лазар Карно был не только математиком, но и военным инженером, и политиком. Его называли «Организатор победы» за реорганизацию французской армии во время революционных войн.</li>
+                            <li>Теорема Карно — одна из нескольких теорем, носящих его имя (есть ещё теорема Карно в термодинамике, открытая его сыном).</li>
+                            <li>Теорема Карно является обобщением теоремы о высотах и теоремы о серединных перпендикулярах.</li>
+                            <li>В проективной геометрии теорема Карно связана с понятием ортогональности.</li>
+                            <li>С помощью теоремы Карно можно доказать, что перпендикуляры, опущенные из вершин треугольника на соответственные стороны ортотреугольника, пересекаются в одной точке.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Карно · Критерий пересечения перпендикуляров к сторонам треугольника</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

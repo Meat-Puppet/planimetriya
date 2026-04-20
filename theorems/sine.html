@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема синусов · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 36px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder p {
+            color: #64748b;
+            font-size: 16px;
+            margin: 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 28px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема синусов</h1>
+                    
+                    <div class="theorem-formula-large">
+                        a / sin A = b / sin B = c / sin C = 2R
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Стороны треугольника пропорциональны синусам противолежащих углов. Отношение стороны к синусу противолежащего угла равно диаметру описанной окружности.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span> со сторонами:</p>
+                        <p><span class="formula-inline">a = BC</span> — сторона, противолежащая углу A</p>
+                        <p><span class="formula-inline">b = AC</span> — сторона, противолежащая углу B</p>
+                        <p><span class="formula-inline">c = AB</span> — сторона, противолежащая углу C</p>
+                        <p><span class="formula-inline">R</span> — радиус описанной окружности</p>
+                        <p>Тогда: <span class="formula-inline">a / sin A = b / sin B = c / sin C = 2R</span></p>
+                    </div>
+                    
+                    <!-- МЕСТО ДЛЯ КАРТИНКИ -->
+                    <div class="image-placeholder">
+                        <img src="images/синусов.svg" alt="Чертёж к теореме синусов" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Опишем около треугольника ABC окружность радиуса R с центром O.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Проведём диаметр BD. Треугольник BCD — прямоугольный (угол BCD опирается на диаметр).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Углы ∠BAC и ∠BDC опираются на одну дугу BC, поэтому они равны: ∠A = ∠BDC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> В прямоугольном треугольнике BCD: sin(∠BDC) = BC / BD = a / (2R).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Так как ∠BDC = ∠A, получаем: sin A = a / (2R), откуда a / sin A = 2R.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Аналогично доказывается для других сторон: b / sin B = 2R и c / sin C = 2R.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>В треугольнике против большей стороны лежит больший угол, и наоборот.</li>
+                            <li>Если известны два угла и сторона, можно найти остальные стороны.</li>
+                            <li>Если известны две стороны и угол напротив одной из них, можно найти остальные элементы (решение треугольника).</li>
+                            <li>Площадь треугольника можно выразить через синус: S = ½·ab·sin C = ½·bc·sin A = ½·ac·sin B.</li>
+                            <li>Радиус описанной окружности: R = a / (2 sin A) = b / (2 sin B) = c / (2 sin C) = abc / (4S).</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольнике ABC угол A = 30°, угол B = 45°, сторона a = 10 см. Найдите сторону b.</p>
+                        <p><em>Решение:</em> a / sin A = b / sin B ⇒ 10 / sin 30° = b / sin 45° ⇒ 10 / 0,5 = b / (√2/2) ⇒ 20 = b / (√2/2) ⇒ b = 10√2 ≈ 14,1 см.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В треугольнике сторона a = 8, угол A = 60°, угол C = 75°. Найдите радиус описанной окружности.</p>
+                        <p><em>Решение:</em> 2R = a / sin A = 8 / sin 60° = 8 / (√3/2) = 16/√3 ⇒ R = 8/√3 ≈ 4,62.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> В треугольнике даны стороны a = 7, b = 9 и угол A = 40°. Найдите угол B.</p>
+                        <p><em>Решение:</em> a / sin A = b / sin B ⇒ 7 / sin 40° = 9 / sin B ⇒ sin B = 9·sin 40° / 7 ≈ 9·0,6428 / 7 ≈ 0,826 ⇒ B ≈ 55,7° или B ≈ 124,3° (два возможных решения).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема синусов была известна ещё в Древней Индии. Индийский математик и астроном Ариабхата (V век) использовал её в своих астрономических расчётах.</p>
+                        <p>В исламском мире теорему синусов развивал Ал-Баттани (IX-X века). В Европе теорема появилась в трудах Региомонтана (XV век) и стала широко применяться в тригонометрии и навигации.</p>
+                        <p>Название «синус» происходит от латинского sinus («изгиб», «пазуха»), что является ошибочным переводом арабского «джайб» («карман»), которое в свою очередь произошло от санскритского «джива» («тетива лука»).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Теорема синусов работает для любого треугольника, включая тупоугольные и прямоугольные.</li>
+                            <li>В прямоугольном треугольнике теорема синусов превращается в определение синуса: sin A = a / c.</li>
+                            <li>Теорема синусов используется в геодезии для определения расстояний до недоступных объектов (метод триангуляции).</li>
+                            <li>В навигации с помощью теоремы синусов рассчитывают курс корабля по известным координатам и углам.</li>
+                            <li>В сферической геометрии существует своя версия теоремы синусов для треугольников на поверхности сферы.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема синусов · Фундаментальная теорема тригонометрии</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

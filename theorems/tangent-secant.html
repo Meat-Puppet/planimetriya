@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Касательная и секущая · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 26px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Касательная и секущая</h1>
+                    
+                    <div class="theorem-formula-large">
+                        AB² = AC · AD
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Если из одной точки вне окружности проведены касательная и секущая, то квадрат касательной равен произведению секущей на её внешнюю часть.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть из точки <span class="formula-inline">A</span> вне окружности проведены:</p>
+                        <p><span class="formula-inline">AB</span> — касательная (точка <span class="formula-inline">B</span> — точка касания).</p>
+                        <p><span class="formula-inline">AC</span> — секущая, пересекающая окружность в точках <span class="formula-inline">C</span> и <span class="formula-inline">D</span> (<span class="formula-inline">C</span> — ближайшая к <span class="formula-inline">A</span> точка).</p>
+                        <p>Тогда: <span class="formula-inline">AB² = AC · AD</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/касательная-и-секущая.svg" alt="Чертёж к теореме о касательной и секущей" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Проведём отрезки BC и BD. Рассмотрим треугольники ABC и ABD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Угол A — общий для обоих треугольников.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Угол ABC — угол между касательной AB и хордой BC. По теореме об угле между касательной и хордой: ∠ABC = ½·∪BC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Угол ADB — вписанный, опирающийся на дугу BC. По теореме о вписанном угле: ∠ADB = ½·∪BC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Следовательно, ∠ABC = ∠ADB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Треугольники ABC и ABD подобны по двум углам (∠A — общий, ∠ABC = ∠ADB).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Из подобия: AB / AD = AC / AB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 8.</strong> Перемножая крест-накрест: AB² = AC · AD.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li><strong>Теорема о двух секущих:</strong> если из одной точки проведены две секущие, то произведения секущих на их внешние части равны: AC · AD = AE · AF.</li>
+                            <li>Касательная является предельным случаем секущей, когда точки пересечения C и D сливаются в одну точку B.</li>
+                            <li>Из теоремы следует, что касательная короче любой секущей, проведённой из той же точки.</li>
+                            <li>Степень точки A относительно окружности равна AB² (или AC · AD).</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Из точки A проведены касательная AB = 6 и секущая ACD. Найдите AD, если AC = 4.</p>
+                        <p><em>Решение:</em> AB² = AC · AD ⇒ 36 = 4 · AD ⇒ AD = 9.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Секущая ACD имеет внешнюю часть AC = 5, а вся секущая AD = 20. Найдите длину касательной AB.</p>
+                        <p><em>Решение:</em> AB² = 5 · 20 = 100 ⇒ AB = 10.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Из точки A на расстоянии 13 от центра окружности радиуса 5 проведена касательная. Найдите её длину.</p>
+                        <p><em>Решение:</em> По теореме Пифагора: AB = √(13² − 5²) = √(169 − 25) = √144 = 12. (Это согласуется с теоремой о касательной и секущей).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема о касательной и секущей была известна ещё древнегреческим математикам. Евклид в «Началах» (Книга III, Предложение 36) формулирует и доказывает эту теорему.</p>
+                        <p>Евклид доказывает её через подобие треугольников, как и в современном школьном курсе. Эта теорема — одна из ключевых в учении о степени точки относительно окружности.</p>
+                        <p>Понятие степени точки ввёл Якоб Штейнер в XIX веке, обобщив теоремы о пересекающихся хордах, секущих и касательных.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Теорема о касательной и секущей — частный случай степени точки, когда одна из секущих вырождается в касательную.</li>
+                            <li>С помощью этой теоремы можно построить отрезок, равный √ab, используя только циркуль и линейку.</li>
+                            <li>В оптике аналогичное соотношение используется для расчёта фокусного расстояния линз.</li>
+                            <li>Теорема работает и в обратную сторону: если AB² = AC · AD, то AB — касательная к окружности, проходящей через точки B, C, D.</li>
+                            <li>В навигации эта теорема использовалась для определения расстояния до горизонта по высоте наблюдателя.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Касательная и секущая · Степень точки относительно окружности</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

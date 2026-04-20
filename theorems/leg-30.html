@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Катет против угла 30° · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 38px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 28px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Катет, лежащий против угла 30°</h1>
+                    
+                    <div class="theorem-formula-large">
+                        a = c / 2
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>В прямоугольном треугольнике катет, лежащий против угла 30°, равен половине гипотенузы.</p>
+                        <p>Обратно: если в прямоугольном треугольнике катет равен половине гипотенузы, то угол, лежащий против этого катета, равен 30°.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан прямоугольный треугольник <span class="formula-inline">ABC</span> с прямым углом <span class="formula-inline">C</span>.</p>
+                        <p><span class="formula-inline">∠A = 30°</span> — острый угол.</p>
+                        <p><span class="formula-inline">a = BC</span> — катет, противолежащий углу A (углу 30°).</p>
+                        <p><span class="formula-inline">b = AC</span> — катет, прилежащий к углу A.</p>
+                        <p><span class="formula-inline">c = AB</span> — гипотенуза.</p>
+                        <p>Тогда: <span class="formula-inline">a = c / 2</span></p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/катет-против-30.svg" alt="Чертёж к теореме о катете против 30°" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство (прямое)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Рассмотрим прямоугольный треугольник ABC с ∠A = 30° и прямым углом C.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Пристроим к треугольнику ABC равный ему треугольник ABD так, чтобы катет AC был общим, а точки B и D лежали по разные стороны от AC.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Тогда ∠BAD = ∠BAC + ∠CAD = 30° + 30° = 60°.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Треугольник ABD — равнобедренный (AB = AD). Угол при вершине A равен 60°, следовательно, треугольник ABD равносторонний.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> В равностороннем треугольнике все стороны равны: AB = BD = AD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> BC — высота (и медиана) в равностороннем треугольнике ABD, поэтому BC = BD / 2.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Так как BD = AB = c, получаем a = BC = c / 2.
+                            </div>
+                        </div>
+                        <p>Прямое утверждение доказано.</p>
+                        
+                        <h3 style="margin-top: 24px;">Доказательство (обратное)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть в прямоугольном треугольнике ABC катет a равен половине гипотенузы c: a = c/2.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> По определению синуса: sin A = a / c = (c/2) / c = 1/2.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Угол A — острый, и sin A = 1/2. Из тригонометрии известно, что единственный острый угол с таким синусом — 30°.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Следовательно, ∠A = 30°.
+                            </div>
+                        </div>
+                        <p>Обратное утверждение доказано.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>В прямоугольном треугольнике с углом 30° второй острый угол равен 60°.</li>
+                            <li>Катет, прилежащий к углу 30°, равен c·cos 30° = c√3/2.</li>
+                            <li>Отношение катетов в таком треугольнике: a : b = 1 : √3.</li>
+                            <li>Площадь треугольника: S = ½·a·b = c²√3 / 8.</li>
+                            <li>Если в прямоугольном треугольнике один из катетов в два раза короче гипотенузы, то противолежащий угол равен 30°.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В прямоугольном треугольнике гипотенуза равна 10, а один из углов 30°. Найдите катет, лежащий против этого угла.</p>
+                        <p><em>Решение:</em> a = c / 2 = 10 / 2 = 5.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В прямоугольном треугольнике катет равен 6 и равен половине гипотенузы. Найдите углы треугольника.</p>
+                        <p><em>Решение:</em> c = 2·6 = 12. Угол против катета: sin α = 6/12 = 0,5 ⇒ α = 30°. Второй острый угол = 60°.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> В прямоугольном треугольнике с углом 30° гипотенуза равна 20. Найдите второй катет.</p>
+                        <p><em>Решение:</em> Катет против 30°: a = 20/2 = 10. Второй катет: b = √(20² − 10²) = √(400 − 100) = √300 = 10√3.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Свойство катета, лежащего против угла 30°, было известно ещё в Древнем Египте и Вавилоне. Оно непосредственно следует из свойств равностороннего треугольника.</p>
+                        <p>Евклид в «Началах» доказывает это свойство через построение равностороннего треугольника. В средневековой Европе теорема широко использовалась в архитектуре и строительстве для построения прямых углов и расчёта уклонов.</p>
+                        <p>В современной тригонометрии это свойство является частным случаем определения синуса: sin 30° = 1/2.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Треугольник с углами 30°, 60°, 90° — один из двух «специальных» прямоугольных треугольников в тригонометрии (второй — 45°, 45°, 90°).</li>
+                            <li>Стороны такого треугольника относятся как 1 : √3 : 2.</li>
+                            <li>Это свойство часто используется в задачах без применения тригонометрических функций.</li>
+                            <li>В черчении угольник с углами 30° и 60° — один из основных инструментов.</li>
+                            <li>Свойство катета против 30° позволяет легко находить высоту равностороннего треугольника: h = a√3/2.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Катет против угла 30° · Частный случай прямоугольного треугольника</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

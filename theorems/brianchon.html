@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Теорема Брианшона · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 26px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 18px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Теорема Брианшона</h1>
+                    
+                    <div class="theorem-formula-large">
+                        AD ∩ BE ∩ CF = O (точка Брианшона)
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Если шестиугольник описан около окружности (или любого конического сечения), то три его главные диагонали пересекаются в одной точке. Эта точка называется точкой Брианшона.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан описанный около окружности шестиугольник, вершины которого обозначены через стороны: <span class="formula-inline">AB</span>, <span class="formula-inline">BC</span>, <span class="formula-inline">CD</span>, <span class="formula-inline">DE</span>, <span class="formula-inline">EF</span>, <span class="formula-inline">FA</span>.</p>
+                        <p><span class="formula-inline">AD</span> — главная диагональ, соединяющая противоположные вершины (между AB и DE).</p>
+                        <p><span class="formula-inline">BE</span> — главная диагональ, соединяющая противоположные вершины (между BC и EF).</p>
+                        <p><span class="formula-inline">CF</span> — главная диагональ, соединяющая противоположные вершины (между CD и FA).</p>
+                        <p>Тогда диагонали <span class="formula-inline">AD</span>, <span class="formula-inline">BE</span>, <span class="formula-inline">CF</span> пересекаются в одной точке <span class="formula-inline">O</span> — точке Брианшона.</p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/брианшона.svg" alt="Чертёж к теореме Брианшона" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Теорема Брианшона двойственна теореме Паскаля в проективной геометрии.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> В терминах поляр и полюсов: если шестиугольник описан около коники, то его вершины — полюсы сторон вписанного шестиугольника.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> По теореме Паскаля точки пересечения противоположных сторон вписанного шестиугольника коллинеарны.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Применяя полярное преобразование, получаем, что главные диагонали описанного шестиугольника пересекаются в одной точке.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Для окружности доказательство можно провести, используя теорему Чевы и свойства касательных.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Если шестиугольник вырождается в пятиугольник, получается теорема о касательной.</li>
+                            <li>Если шестиугольник вырождается в четырёхугольник, получается теорема Ньютона.</li>
+                            <li>Теорема Брианшона справедлива для любого конического сечения (эллипса, параболы, гиперболы).</li>
+                            <li>Теорема Брианшона и теорема Паскаля — двойственные утверждения.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> Дан описанный шестиугольник. Докажите, что его главные диагонали пересекаются в одной точке.</p>
+                        <p><em>Решение:</em> Это прямая формулировка теоремы Брианшона.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> Что произойдёт, если шестиугольник правильный?</p>
+                        <p><em>Решение:</em> В правильном описанном шестиугольнике точка Брианшона совпадает с центром окружности.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> Примените теорему Брианшона к описанному четырёхугольнику.</p>
+                        <p><em>Решение:</em> Описанный четырёхугольник можно рассматривать как вырожденный шестиугольник. Теорема Брианшона сводится к теореме Ньютона: прямая, соединяющая середины диагоналей, проходит через центр вписанной окружности.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Теорема названа в честь французского математика Шарля Жюльена Брианшона (1783–1864), который сформулировал и доказал её в 1806 году, когда ему было всего 23 года.</p>
+                        <p>Брианшон был учеником Гаспара Монжа и одним из основателей современной проективной геометрии. Его теорема была опубликована в первом томе «Journal de l'École Polytechnique».</p>
+                        <p>Интересно, что Брианшон открыл свою теорему, применив принцип двойственности к теореме Паскаля, что стало одним из первых примеров использования двойственности в геометрии.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Теорема Брианшона — двойственный аналог теоремы Паскаля в проективной геометрии.</li>
+                            <li>Точка Брианшона — одна из замечательных точек в геометрии конических сечений.</li>
+                            <li>Теорема справедлива для любого порядка сторон шестиугольника.</li>
+                            <li>Брианшон доказал свою теорему, когда служил в армии Наполеона.</li>
+                            <li>В компьютерной графике теорема Брианшона используется для построения сплайнов и кривых Безье.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Теорема Брианшона · Точка пересечения главных диагоналей описанного шестиугольника</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

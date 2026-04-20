@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Признак равнобедренного треугольника (по углам) · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 34px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 26px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Признак равнобедренного треугольника (по углам)</h1>
+                    
+                    <div class="theorem-formula-large">
+                        ∠A = ∠B &nbsp;&nbsp;⇒&nbsp;&nbsp; AC = BC
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>Если в треугольнике два угла равны, то он равнобедренный, причём равные стороны лежат против равных углов.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан треугольник <span class="formula-inline">ABC</span>, в котором <span class="formula-inline">∠A = ∠B</span>.</p>
+                        <p><span class="formula-inline">∠A</span> — угол при вершине A, противолежащий стороне BC = a.</p>
+                        <p><span class="formula-inline">∠B</span> — угол при вершине B, противолежащий стороне AC = b.</p>
+                        <p><span class="formula-inline">∠C</span> — угол при вершине C.</p>
+                        <p>Тогда: <span class="formula-inline">BC = AC</span> (стороны, противолежащие равным углам, равны).</p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/признак-по-углам.svg" alt="Чертёж к признаку равнобедренного треугольника по углам" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть в треугольнике ABC углы A и B равны: ∠A = ∠B.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Проведём высоту CD из вершины C на сторону AB. D — основание высоты.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Рассмотрим прямоугольные треугольники ACD и BCD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> У них: CD — общий катет.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> ∠A = ∠B по условию.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Следовательно, треугольники ACD и BCD равны по катету и острому углу (или по гипотенузе и острому углу, если рассматривать AC и BC как гипотенузы).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Из равенства треугольников следует AC = BC.
+                            </div>
+                        </div>
+                        <p>Теорема доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Альтернативное доказательство (через теорему синусов)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> По теореме синусов: a / sin A = b / sin B.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> По условию ∠A = ∠B, следовательно, sin A = sin B.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> Подставляем: a / sin A = b / sin A.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Сокращая на sin A (≠ 0), получаем a = b, то есть BC = AC.
+                            </div>
+                        </div>
+                        <p>Доказательство через теорему синусов особенно элегантно и коротко.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>Если в треугольнике два угла равны, то противолежащие им стороны равны.</li>
+                            <li>В равнобедренном треугольнике углы при основании равны — это прямое и обратное утверждения.</li>
+                            <li>Если все три угла треугольника равны (по 60°), то треугольник равносторонний.</li>
+                            <li>Признак по углам — самый простой способ доказать, что треугольник равнобедренный, не измеряя стороны.</li>
+                            <li>В прямоугольном треугольнике, если один острый угол 45°, то треугольник равнобедренный.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольнике ABC углы A и B равны 50°. Докажите, что треугольник равнобедренный, и найдите угол C.</p>
+                        <p><em>Решение:</em> Так как ∠A = ∠B = 50°, по признаку треугольник равнобедренный с основанием AB. ∠C = 180° − 2·50° = 80°.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В треугольнике один угол равен 70°, другой 55°. Является ли треугольник равнобедренным?</p>
+                        <p><em>Решение:</em> Найдём третий угол: 180° − 70° − 55° = 55°. Два угла равны 55°, значит, треугольник равнобедренный.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> В прямоугольном треугольнике один из острых углов равен 45°. Найдите отношение катетов.</p>
+                        <p><em>Решение:</em> Второй острый угол: 90° − 45° = 45°. Углы равны, следовательно, катеты равны. Отношение равно 1:1.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Признак равнобедренного треугольника по двум углам был известен ещё древнегреческим математикам. Евклид в «Началах» (Книга I, Предложение 6) доказывает: «Если в треугольнике два угла равны, то и стороны, противолежащие этим углам, равны».</p>
+                        <p>Это предложение является обратным к Предложению 5 (свойство углов при основании равнобедренного треугольника). Вместе они составляют полную характеризацию равнобедренного треугольника: равенство сторон эквивалентно равенству противолежащих углов.</p>
+                        <p>Признак по углам широко используется в геометрических построениях и доказательствах.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Этот признак — один из немногих, позволяющих судить о равенстве сторон, зная только углы.</li>
+                            <li>В неевклидовых геометриях (например, на сфере) равенство углов также влечёт равенство противолежащих сторон.</li>
+                            <li>Признак по углам часто используется в навигации и картографии для построения равнобедренных треугольников при триангуляции.</li>
+                            <li>В архитектуре готических соборов равнобедренные треугольники с углами 72°-72°-36° (золотой треугольник) создают гармоничные пропорции.</li>
+                            <li>При решении задач признак по углам часто быстрее и удобнее, чем измерение или вычисление длин сторон.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Признак равнобедренного треугольника по углам · Обратная теорема</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>

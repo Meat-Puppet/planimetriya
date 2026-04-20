@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Медиана, биссектриса и высота в равнобедренном треугольнике · Планиметрия</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        .theorem-page {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 32px;
+        }
+        .theorem-page-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .theorem-formula-large {
+            font-size: 28px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            color: #1E2321;
+            text-align: center;
+            padding: 24px;
+            background: #f0f4f2;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border: 2px solid #7A9D8C;
+        }
+        .theorem-section {
+            margin-bottom: 32px;
+        }
+        .theorem-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3a33;
+            margin-bottom: 16px;
+            border-left: 4px solid #7A9D8C;
+            padding-left: 16px;
+        }
+        .theorem-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 18px;
+            color: #1E2321;
+            background: #f8fafc;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .proof-block {
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+        .proof-step {
+            margin-bottom: 16px;
+        }
+        .proof-step strong {
+            color: #1E2321;
+        }
+        .facts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .facts-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            color: #334155;
+        }
+        .facts-list li:last-child {
+            border-bottom: none;
+        }
+        .facts-list li::before {
+            content: "•";
+            color: #7A9D8C;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .image-placeholder {
+            background: #f5f7fa;
+            border: 2px dashed #b9c9c1;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 24px 0 32px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 640px) {
+            .theorem-page {
+                padding: 20px;
+            }
+            .theorem-page-title {
+                font-size: 26px;
+            }
+            .theorem-formula-large {
+                font-size: 22px;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="site-title">
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../theorems.html">Все теоремы</a>
+                <a href="../formulas.html">Формулы</a>
+                <a href="../tasks.html">Задачи</a>
+            </nav>
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+            <div class="content-container">
+                <div class="theorem-page">
+                    <h1 class="theorem-page-title">Совпадение медианы, биссектрисы и высоты</h1>
+                    
+                    <div class="theorem-formula-large">
+                        Медиана = Биссектриса = Высота (к основанию)
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Формулировка</h3>
+                        <p>В равнобедренном треугольнике медиана, биссектриса и высота, проведённые к основанию, совпадают.</p>
+                        <p>Обратно: если в треугольнике медиана, биссектриса и высота, проведённые к одной стороне, совпадают (любые две из них), то треугольник равнобедренный.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Обозначения</h3>
+                        <p>Пусть дан равнобедренный треугольник <span class="formula-inline">ABC</span>, в котором <span class="formula-inline">AC = BC</span>.</p>
+                        <p><span class="formula-inline">AB</span> — основание треугольника.</p>
+                        <p><span class="formula-inline">CD</span> — отрезок, проведённый из вершины C к основанию AB (точка D лежит на AB).</p>
+                        <p>Тогда <span class="formula-inline">CD</span> одновременно является:</p>
+                        <p>• <strong>Медианой</strong> — D делит AB пополам: AD = DB</p>
+                        <p>• <strong>Биссектрисой</strong> — ∠ACD = ∠BCD</p>
+                        <p>• <strong>Высотой</strong> — CD ⟂ AB</p>
+                    </div>
+                    
+                    <!-- ЧЕРТЁЖ -->
+                    <div class="image-placeholder">
+                        <img src="images/совпадение-медианы-биссектрисы-высоты.svg" alt="Чертёж к теореме о совпадении медианы, биссектрисы и высоты" style="max-width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Доказательство (прямое)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Рассмотрим равнобедренный треугольник ABC с основанием AB (AC = BC).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Проведём биссектрису CD из вершины C к основанию AB.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> По определению биссектрисы: ∠ACD = ∠BCD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Рассмотрим треугольники ACD и BCD. У них: AC = BC (по условию), CD — общая, ∠ACD = ∠BCD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Треугольники равны по двум сторонам и углу между ними (I признак).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 6.</strong> Из равенства треугольников следует: AD = DB (CD — медиана).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 7.</strong> Также ∠ADC = ∠BDC. Так как они смежные, то каждый равен 90° (CD — высота).
+                            </div>
+                        </div>
+                        <p>Таким образом, биссектриса CD одновременно является медианой и высотой. Теорема доказана.</p>
+                        
+                        <h3 style="margin-top: 24px;">Доказательство (обратное — совпадение медианы и высоты)</h3>
+                        <div class="proof-block">
+                            <div class="proof-step">
+                                <strong>Шаг 1.</strong> Пусть в треугольнике ABC отрезок CD является одновременно медианой (AD = DB) и высотой (CD ⟂ AB).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 2.</strong> Рассмотрим прямоугольные треугольники ACD и BCD.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 3.</strong> У них: CD — общий катет, AD = DB (CD — медиана).
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 4.</strong> Треугольники равны по двум катетам.
+                            </div>
+                            <div class="proof-step">
+                                <strong>Шаг 5.</strong> Из равенства следует AC = BC, то есть треугольник равнобедренный.
+                            </div>
+                        </div>
+                        <p>Аналогично доказываются другие комбинации (медиана + биссектриса, высота + биссектриса).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Следствия из теоремы</h3>
+                        <ul class="facts-list">
+                            <li>В равнобедренном треугольнике все три «замечательные линии» к основанию совпадают.</li>
+                            <li>Центр вписанной окружности, центр описанной окружности, ортоцентр и центроид в равнобедренном треугольнике лежат на одной прямой — оси симметрии.</li>
+                            <li>Если в треугольнике медиана совпадает с высотой, то треугольник равнобедренный.</li>
+                            <li>Если в треугольнике биссектриса совпадает с медианой, то треугольник равнобедренный.</li>
+                            <li>Если в треугольнике биссектриса совпадает с высотой, то треугольник равнобедренный.</li>
+                            <li>В равностороннем треугольнике все три медианы, биссектрисы и высоты совпадают попарно.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Примеры применения</h3>
+                        <p><strong>Пример 1.</strong> В треугольнике ABC медиана CD перпендикулярна основанию AB. Докажите, что треугольник равнобедренный.</p>
+                        <p><em>Решение:</em> Медиана, перпендикулярная стороне, является высотой. По обратной теореме, треугольник равнобедренный с основанием AB.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 2.</strong> В равнобедренном треугольнике основание равно 10 см, боковая сторона 13 см. Найдите длину медианы к основанию.</p>
+                        <p><em>Решение:</em> Медиана к основанию совпадает с высотой. По теореме Пифагора: h = √(13² − 5²) = √(169 − 25) = √144 = 12 см.</p>
+                        <p style="margin-top: 16px;"><strong>Пример 3.</strong> В треугольнике ABC проведена биссектриса CD, которая делит основание AB пополам. Докажите, что треугольник равнобедренный.</p>
+                        <p><em>Решение:</em> По условию, биссектриса совпадает с медианой. По обратной теореме, треугольник равнобедренный (AC = BC).</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Историческая справка</h3>
+                        <p>Свойство равнобедренного треугольника, что медиана, биссектриса и высота к основанию совпадают, было известно ещё в Древней Греции.</p>
+                        <p>Евклид в «Началах» (Книга I, Предложения 5 и 6) доказывает эквивалентность равенства сторон и равенства углов, из чего напрямую следует совпадение этих линий.</p>
+                        <p>Эта теорема широко используется в задачах на построение и является одной из ключевых в школьном курсе геометрии.</p>
+                    </div>
+                    
+                    <div class="theorem-section">
+                        <h3>Интересные факты</h3>
+                        <ul class="facts-list">
+                            <li>Ось симметрии равнобедренного треугольника — это и есть та самая линия, в которой совпадают медиана, биссектриса и высота.</li>
+                            <li>Совпадение этих трёх линий — уникальное свойство равнобедренного треугольника (и равностороннего как частного случая).</li>
+                            <li>В архитектуре и строительстве это свойство используется для проверки симметричности конструкций.</li>
+                            <li>В оригами сгиб, совпадающий с осью симметрии равнобедренного треугольника, одновременно является и биссектрисой, и медианой, и высотой.</li>
+                            <li>Теорема о совпадении медианы, биссектрисы и высоты — пример «красивого» геометрического факта, где несколько понятий сливаются в одно.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Совпадение медианы, биссектрисы и высоты · Ось симметрии равнобедренного треугольника</p>
+            </div>
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+</body>
+</html>
