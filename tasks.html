@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Задачи по планиметрии · Справочник</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link:hover {
+            opacity: 0.85;
+        }
+        .logo-img {
+            display: block;
+            max-width: none;
+        }
+        main {
+            padding-top: 48px;
+        }
+        
+        .page-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .page-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .tasks-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .theorem-section-block {
+            margin-bottom: 48px;
+        }
+        
+        .theorem-section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1E2321;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #7A9D8C;
+        }
+        
+        .task-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 28px 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .task-header {
+            margin-bottom: 16px;
+        }
+        
+        .task-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1E2321;
+        }
+        
+        .task-condition {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+        
+        .task-solution-toggle {
+            margin-bottom: 16px;
+        }
+        
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #7A9D8C;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        
+        .toggle-btn:hover {
+            color: #5a7d6c;
+            text-decoration: underline;
+        }
+        
+        .task-solution {
+            display: none;
+            margin-top: 16px;
+            padding: 20px;
+            background: #fafdfb;
+            border-left: 4px solid #7A9D8C;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .task-solution.show {
+            display: block;
+        }
+        
+        .task-solution p {
+            margin-bottom: 12px;
+            color: #334155;
+            line-height: 1.7;
+        }
+        
+        .task-solution .formula-inline {
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 17px;
+            color: #1E2321;
+            background: #f0f4f2;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        
+        .answer-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .answer-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1E2321;
+            margin-bottom: 10px;
+        }
+        
+        .answer-input-wrapper {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .answer-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: #ffffff;
+            transition: border-color 0.2s;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .answer-input:focus {
+            outline: none;
+            border-color: #7A9D8C;
+        }
+        
+        .check-btn {
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            background: #7A9D8C;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .check-btn:hover {
+            background: #5a7d6c;
+        }
+        
+        .feedback {
+            margin-top: 16px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 15px;
+            display: none;
+        }
+        
+        .feedback.show {
+            display: block;
+        }
+        
+        .feedback.correct {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        
+        .feedback.incorrect {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+        
+        .feedback .correct-answer {
+            font-weight: 700;
+            margin-top: 8px;
+        }
+        
+        @media (max-width: 640px) {
+            .page-title {
+                font-size: 32px;
+            }
+            .page-subtitle {
+                font-size: 16px;
+            }
+            .task-card {
+                padding: 20px;
+            }
+            .theorem-section-title {
+                font-size: 24px;
+            }
+            .answer-input-wrapper {
+                flex-direction: column;
+            }
+            .check-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="header">
+            <div class="site-title">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Логотип" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Главная</a>
+                <a href="theorems.html">Все теоремы</a>
+                <a href="formulas.html">Формулы</a>
+                <a href="tasks.html" class="active">Задачи</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="content-container">
+                <h1 class="page-title">Задачи по планиметрии</h1>
+                <p class="page-subtitle">Интерактивные задачи с проверкой ответов</p>
+                
+                <div class="tasks-container">
+                    
+                    <!-- 1. ТЕОРЕМА ПИФАГОРА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема Пифагора</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №1</span></div>
+                            <div class="task-condition">Катеты прямоугольного треугольника равны 6 см и 8 см. Найдите гипотенузу.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('p1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="p1"><p><strong>Решение:</strong> c² = 6² + 8² = 36 + 64 = 100 ⇒ c = 10 см</p><p><strong>Ответ:</strong> 10</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="p1-answer"><button class="check-btn" onclick="checkAnswer('p1', '10')">Проверить</button></div><div class="feedback" id="p1-feedback"></div></div>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №2</span></div>
+                            <div class="task-condition">Гипотенуза прямоугольного треугольника равна 13 см, один из катетов равен 5 см. Найдите второй катет.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('p2')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="p2"><p><strong>Решение:</strong> b² = 13² − 5² = 169 − 25 = 144 ⇒ b = 12 см</p><p><strong>Ответ:</strong> 12</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="p2-answer"><button class="check-btn" onclick="checkAnswer('p2', '12')">Проверить</button></div><div class="feedback" id="p2-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2. СУММА УГЛОВ ТРЕУГОЛЬНИКА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Сумма углов треугольника</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №3</span></div>
+                            <div class="task-condition">В треугольнике два угла равны 45° и 75°. Найдите третий угол.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('s1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="s1"><p><strong>Решение:</strong> 180° − (45° + 75°) = 60°</p><p><strong>Ответ:</strong> 60</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="s1-answer"><button class="check-btn" onclick="checkAnswer('s1', '60')">Проверить</button></div><div class="feedback" id="s1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3. ВНЕШНИЙ УГОЛ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Внешний угол треугольника</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №4</span></div>
+                            <div class="task-condition">В треугольнике ABC углы A = 40°, B = 70°. Найдите внешний угол при вершине C.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('v1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="v1"><p><strong>Решение:</strong> ∠внеш = ∠A + ∠B = 40° + 70° = 110°</p><p><strong>Ответ:</strong> 110</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="v1-answer"><button class="check-btn" onclick="checkAnswer('v1', '110')">Проверить</button></div><div class="feedback" id="v1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4. ТЕОРЕМА СИНУСОВ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема синусов</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №5</span></div>
+                            <div class="task-condition">В треугольнике ABC угол A = 30°, угол B = 45°, сторона a = 10 см. Найдите сторону b.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('sin1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="sin1"><p><strong>Решение:</strong> a/sin A = b/sin B ⇒ 10/0,5 = b/(√2/2) ⇒ 20 = b/0,707 ⇒ b ≈ 14,14 см</p><p><strong>Ответ:</strong> 14.14</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (округлите до сотых):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="sin1-answer"><button class="check-btn" onclick="checkAnswer('sin1', '14.14')">Проверить</button></div><div class="feedback" id="sin1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 5. ТЕОРЕМА КОСИНУСОВ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема косинусов</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №6</span></div>
+                            <div class="task-condition">В треугольнике стороны a = 5, b = 7, угол C = 60°. Найдите сторону c.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('cos1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="cos1"><p><strong>Решение:</strong> c² = 5² + 7² − 2·5·7·cos 60° = 25 + 49 − 70·0,5 = 74 − 35 = 39 ⇒ c = √39 ≈ 6,24</p><p><strong>Ответ:</strong> 6.24</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (округлите до сотых):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="cos1-answer"><button class="check-btn" onclick="checkAnswer('cos1', '6.24')">Проверить</button></div><div class="feedback" id="cos1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 6. ФОРМУЛА ГЕРОНА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Формула Герона</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №7</span></div>
+                            <div class="task-condition">Стороны треугольника равны 13, 14 и 15. Найдите его площадь.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('g1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="g1"><p><strong>Решение:</strong> p = 21, S = √(21·8·7·6) = √7056 = 84</p><p><strong>Ответ:</strong> 84</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="g1-answer"><button class="check-btn" onclick="checkAnswer('g1', '84')">Проверить</button></div><div class="feedback" id="g1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 7. СВОЙСТВО БИССЕКТРИСЫ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Свойство биссектрисы</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №8</span></div>
+                            <div class="task-condition">В треугольнике ABC стороны AB = 6, AC = 9. Биссектриса AD делит сторону BC на отрезки. Найдите отношение BD : DC.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('bis1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="bis1"><p><strong>Решение:</strong> BD/DC = AB/AC = 6/9 = 2/3</p><p><strong>Ответ:</strong> 2/3</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (дробь):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="bis1-answer"><button class="check-btn" onclick="checkAnswer('bis1', '2/3')">Проверить</button></div><div class="feedback" id="bis1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 8. МЕДИАНЫ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Свойство медиан</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №9</span></div>
+                            <div class="task-condition">Медиана AA₁ = 15 см. Точка G — центроид. Найдите AG.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('med1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="med1"><p><strong>Решение:</strong> AG : GA₁ = 2 : 1 ⇒ AG = 2/3·15 = 10 см</p><p><strong>Ответ:</strong> 10</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="med1-answer"><button class="check-btn" onclick="checkAnswer('med1', '10')">Проверить</button></div><div class="feedback" id="med1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 9. КАТЕТ ПРОТИВ 30° -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Катет против угла 30°</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №10</span></div>
+                            <div class="task-condition">В прямоугольном треугольнике гипотенуза равна 20 см, один из углов 30°. Найдите катет, лежащий против этого угла.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('k1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="k1"><p><strong>Решение:</strong> a = c/2 = 20/2 = 10 см</p><p><strong>Ответ:</strong> 10</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="k1-answer"><button class="check-btn" onclick="checkAnswer('k1', '10')">Проверить</button></div><div class="feedback" id="k1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 10. МЕДИАНА К ГИПОТЕНУЗЕ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Медиана к гипотенузе</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №11</span></div>
+                            <div class="task-condition">В прямоугольном треугольнике гипотенуза равна 18 см. Найдите медиану, проведённую к гипотенузе.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('mh1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="mh1"><p><strong>Решение:</strong> m = c/2 = 18/2 = 9 см</p><p><strong>Ответ:</strong> 9</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="mh1-answer"><button class="check-btn" onclick="checkAnswer('mh1', '9')">Проверить</button></div><div class="feedback" id="mh1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 11. НЕРАВЕНСТВО ТРЕУГОЛЬНИКА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Неравенство треугольника</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №12</span></div>
+                            <div class="task-condition">Можно ли составить треугольник из отрезков длиной 4, 7 и 12?</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('nt1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="nt1"><p><strong>Решение:</strong> 4 + 7 = 11 < 12 ⇒ нельзя</p><p><strong>Ответ:</strong> нет</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (да/нет):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="nt1-answer"><button class="check-btn" onclick="checkAnswer('nt1', 'нет')">Проверить</button></div><div class="feedback" id="nt1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 12. ВПИСАННЫЙ УГОЛ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Вписанный угол</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №13</span></div>
+                            <div class="task-condition">Вписанный угол опирается на дугу 80°. Найдите величину угла.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('vu1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="vu1"><p><strong>Решение:</strong> ∠ = ½·∪ = ½·80° = 40°</p><p><strong>Ответ:</strong> 40</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="vu1-answer"><button class="check-btn" onclick="checkAnswer('vu1', '40')">Проверить</button></div><div class="feedback" id="vu1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 13. ЦЕНТРАЛЬНЫЙ УГОЛ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Центральный угол</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №14</span></div>
+                            <div class="task-condition">Центральный угол равен 120°. Найдите дугу, на которую он опирается.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('cu1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="cu1"><p><strong>Решение:</strong> ∪ = ∠AOB = 120°</p><p><strong>Ответ:</strong> 120</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="cu1-answer"><button class="check-btn" onclick="checkAnswer('cu1', '120')">Проверить</button></div><div class="feedback" id="cu1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 14. КАСАТЕЛЬНАЯ И СЕКУЩАЯ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Касательная и секущая</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №15</span></div>
+                            <div class="task-condition">Из точки вне окружности проведены касательная длиной 12 и секущая. Внешняя часть секущей равна 8. Найдите длину всей секущей.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('ks1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="ks1"><p><strong>Решение:</strong> 12² = 8·AD ⇒ 144 = 8·AD ⇒ AD = 18</p><p><strong>Ответ:</strong> 18</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="ks1-answer"><button class="check-btn" onclick="checkAnswer('ks1', '18')">Проверить</button></div><div class="feedback" id="ks1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 15. ПЕРЕСЕКАЮЩИЕСЯ ХОРДЫ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Пересекающиеся хорды</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №16</span></div>
+                            <div class="task-condition">Хорды AB и CD пересекаются в точке E. AE = 4, EB = 6, CE = 3. Найдите ED.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('ph1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="ph1"><p><strong>Решение:</strong> AE·EB = CE·ED ⇒ 4·6 = 3·ED ⇒ 24 = 3·ED ⇒ ED = 8</p><p><strong>Ответ:</strong> 8</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="ph1-answer"><button class="check-btn" onclick="checkAnswer('ph1', '8')">Проверить</button></div><div class="feedback" id="ph1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 16. ОТРЕЗКИ КАСАТЕЛЬНЫХ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Отрезки касательных</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №17</span></div>
+                            <div class="task-condition">Из точки A к окружности проведены две касательные AB и AC. AB = 15 см. Найдите AC.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('ok1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="ok1"><p><strong>Решение:</strong> Отрезки касательных из одной точки равны: AC = AB = 15 см</p><p><strong>Ответ:</strong> 15</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="ok1-answer"><button class="check-btn" onclick="checkAnswer('ok1', '15')">Проверить</button></div><div class="feedback" id="ok1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 17. СРЕДНЯЯ ЛИНИЯ ТРЕУГОЛЬНИКА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Средняя линия треугольника</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №18</span></div>
+                            <div class="task-condition">В треугольнике ABC сторона AC = 14 см. Найдите длину средней линии, параллельной этой стороне.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('sl1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="sl1"><p><strong>Решение:</strong> MN = AC/2 = 14/2 = 7 см</p><p><strong>Ответ:</strong> 7</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="sl1-answer"><button class="check-btn" onclick="checkAnswer('sl1', '7')">Проверить</button></div><div class="feedback" id="sl1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 18. СРЕДНЯЯ ЛИНИЯ ТРАПЕЦИИ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Средняя линия трапеции</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №19</span></div>
+                            <div class="task-condition">Основания трапеции равны 8 см и 12 см. Найдите длину средней линии.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('slt1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="slt1"><p><strong>Решение:</strong> m = (a + b)/2 = (8 + 12)/2 = 10 см</p><p><strong>Ответ:</strong> 10</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="slt1-answer"><button class="check-btn" onclick="checkAnswer('slt1', '10')">Проверить</button></div><div class="feedback" id="slt1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 19. ПЛОЩАДЬ ПАРАЛЛЕЛОГРАММА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Площадь параллелограмма</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №20</span></div>
+                            <div class="task-condition">Стороны параллелограмма равны 10 см и 6 см, угол между ними 30°. Найдите площадь.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('pl1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="pl1"><p><strong>Решение:</strong> S = a·b·sin α = 10·6·sin 30° = 60·0,5 = 30 см²</p><p><strong>Ответ:</strong> 30</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="pl1-answer"><button class="check-btn" onclick="checkAnswer('pl1', '30')">Проверить</button></div><div class="feedback" id="pl1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 20. ТЕОРЕМА ФАЛЕСА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема Фалеса</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №21</span></div>
+                            <div class="task-condition">На сторонах угла O отложены точки A, B и C, D так, что AC ∥ BD. OA = 3, OB = 5, OC = 4,5. Найдите OD.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('f1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="f1"><p><strong>Решение:</strong> OA/OB = OC/OD ⇒ 3/5 = 4,5/OD ⇒ OD = 5·4,5/3 = 7,5</p><p><strong>Ответ:</strong> 7.5</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="f1-answer"><button class="check-btn" onclick="checkAnswer('f1', '7.5')">Проверить</button></div><div class="feedback" id="f1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 21. ТЕОРЕМА ПТОЛЕМЕЯ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема Птолемея</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №22</span></div>
+                            <div class="task-condition">Во вписанном четырёхугольнике ABCD: AB = 3, BC = 4, CD = 5, AD = 6, диагональ AC = 7. Найдите диагональ BD.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('pt1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="pt1"><p><strong>Решение:</strong> AC·BD = AB·CD + BC·AD ⇒ 7·BD = 3·5 + 4·6 = 15 + 24 = 39 ⇒ BD = 39/7 ≈ 5,57</p><p><strong>Ответ:</strong> 5.57</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (округлите до сотых):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="pt1-answer"><button class="check-btn" onclick="checkAnswer('pt1', '5.57')">Проверить</button></div><div class="feedback" id="pt1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 22. ВПИСАННЫЙ ЧЕТЫРЁХУГОЛЬНИК -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Вписанный четырёхугольник</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №23</span></div>
+                            <div class="task-condition">Во вписанном четырёхугольнике ABCD ∠A = 70°, ∠B = 110°. Найдите ∠C и ∠D.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('vc1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="vc1"><p><strong>Решение:</strong> ∠C = 180° − ∠A = 110°, ∠D = 180° − ∠B = 70°</p><p><strong>Ответ:</strong> 110, 70</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (два числа через запятую):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="vc1-answer"><button class="check-btn" onclick="checkAnswer('vc1', '110, 70')">Проверить</button></div><div class="feedback" id="vc1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 23. ОПИСАННЫЙ ЧЕТЫРЁХУГОЛЬНИК -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Описанный четырёхугольник</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №24</span></div>
+                            <div class="task-condition">В описанном четырёхугольнике три стороны равны 5, 7 и 8. Суммы противоположных сторон равны 13. Найдите четвёртую сторону.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('oc1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="oc1"><p><strong>Решение:</strong> a + c = b + d = 13. Подбирая: 5 + 8 = 13, значит 7 + d = 13 ⇒ d = 6</p><p><strong>Ответ:</strong> 6</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="oc1-answer"><button class="check-btn" onclick="checkAnswer('oc1', '6')">Проверить</button></div><div class="feedback" id="oc1-feedback"></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 24. ТЕОРЕМА СТЮАРТА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема Стюарта</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №25</span></div>
+                            <div class="task-condition">В треугольнике ABC сторона a = 10, b = 7, c = 8. Точка D делит BC в отношении BD:DC = 2:3. Найдите длину чевианы AD.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('st1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="st1"><p><strong>Решение:</strong> m = 2/5·10 = 4, n = 3/5·10 = 6. b²m + c²n = a(d² + mn) ⇒ 49·4 + 64·6 = 10(d² + 24) ⇒ 196 + 384 = 10d² + 240 ⇒ 580 = 10d² + 240 ⇒ 10d² = 340 ⇒ d² = 34 ⇒ d ≈ 5,83</p><p><strong>Ответ:</strong> 5.83</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (округлите до сотых):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="st1-answer"><button class="check-btn" onclick="checkAnswer('st1', '5.83')">Проверить</button></div><div class="feedback" id="st1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 25. ТЕОРЕМА ТАНГЕНСОВ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема тангенсов</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №26</span></div>
+                            <div class="task-condition">В треугольнике даны стороны a = 10, b = 7 и угол C = 60°. Найдите углы A и B.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('tg1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="tg1"><p><strong>Решение:</strong> A + B = 120°. (10−7)/(10+7) = tg((A−B)/2) / tg 60° ⇒ 3/17 = tg((A−B)/2) / √3 ⇒ tg((A−B)/2) ≈ 0,305 ⇒ (A−B)/2 ≈ 17° ⇒ A−B ≈ 34°. A = 77°, B = 43°</p><p><strong>Ответ:</strong> 77, 43</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (два числа через запятую):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="tg1-answer"><button class="check-btn" onclick="checkAnswer('tg1', '77, 43')">Проверить</button></div><div class="feedback" id="tg1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 26. ВЫСОТЫ ТРЕУГОЛЬНИКА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Высоты треугольника</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №27</span></div>
+                            <div class="task-condition">В треугольнике со сторонами 13, 14, 15 найдите высоту, опущенную на сторону 14.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('h1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="h1"><p><strong>Решение:</strong> S = 84 (по формуле Герона). h = 2S/a = 2·84/14 = 12</p><p><strong>Ответ:</strong> 12</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="h1-answer"><button class="check-btn" onclick="checkAnswer('h1', '12')">Проверить</button></div><div class="feedback" id="h1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 27. СЕРЕДИННЫЙ ПЕРПЕНДИКУЛЯР -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Серединный перпендикуляр</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №28</span></div>
+                            <div class="task-condition">Точка M лежит на серединном перпендикуляре к отрезку AB на расстоянии 12 см от AB. AB = 10 см. Найдите MA.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('sp1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="sp1"><p><strong>Решение:</strong> OA = 5 см, MO = 12 см. MA = √(12² + 5²) = √(144 + 25) = √169 = 13 см</p><p><strong>Ответ:</strong> 13</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="sp1-answer"><button class="check-btn" onclick="checkAnswer('sp1', '13')">Проверить</button></div><div class="feedback" id="sp1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 28. ТЕОРЕМА ЭЙЛЕРА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема Эйлера</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №29</span></div>
+                            <div class="task-condition">В треугольнике R = 10, r = 4. Найдите расстояние между центрами вписанной и описанной окружностей.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('e1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="e1"><p><strong>Решение:</strong> d² = R(R − 2r) = 10(10 − 8) = 20 ⇒ d = √20 = 2√5 ≈ 4,47</p><p><strong>Ответ:</strong> 4.47</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (округлите до сотых):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="e1-answer"><button class="check-btn" onclick="checkAnswer('e1', '4.47')">Проверить</button></div><div class="feedback" id="e1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 29. УГОЛ МЕЖДУ КАСАТЕЛЬНОЙ И ХОРДОЙ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Угол между касательной и хордой</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №30</span></div>
+                            <div class="task-condition">Касательная и хорда образуют угол 35°. Найдите дугу, заключённую внутри угла.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('uh1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="uh1"><p><strong>Решение:</strong> ∠ = ½·∪ ⇒ ∪ = 2·35° = 70°</p><p><strong>Ответ:</strong> 70</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="uh1-answer"><button class="check-btn" onclick="checkAnswer('uh1', '70')">Проверить</button></div><div class="feedback" id="uh1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 30. ПРОПОРЦИОНАЛЬНЫЕ ОТРЕЗКИ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Пропорциональные отрезки</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №31</span></div>
+                            <div class="task-condition">В прямоугольном треугольнике высота делит гипотенузу на отрезки 4 и 9. Найдите высоту.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('po1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="po1"><p><strong>Решение:</strong> h² = a_c · b_c = 4 · 9 = 36 ⇒ h = 6</p><p><strong>Ответ:</strong> 6</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="po1-answer"><button class="check-btn" onclick="checkAnswer('po1', '6')">Проверить</button></div><div class="feedback" id="po1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 31. ПРИЗНАКИ ПОДОБИЯ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Подобие треугольников</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №32</span></div>
+                            <div class="task-condition">В треугольниках ABC и A₁B₁C₁: ∠A = ∠A₁ = 50°, ∠B = ∠B₁ = 70°. Подобны ли треугольники?</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('pb1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="pb1"><p><strong>Решение:</strong> По I признаку подобия (два угла равны) треугольники подобны</p><p><strong>Ответ:</strong> да</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (да/нет):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="pb1-answer"><button class="check-btn" onclick="checkAnswer('pb1', 'да')">Проверить</button></div><div class="feedback" id="pb1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 32. ТЕОРЕМА ЧЕВЫ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема Чевы</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №33</span></div>
+                            <div class="task-condition">В треугольнике ABC точки D, E, F делят стороны в отношениях 1:2, 2:3, 3:1. Пересекаются ли чевианы в одной точке?</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('ch1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="ch1"><p><strong>Решение:</strong> (1/2)·(2/3)·(3/1) = 1 ⇒ по теореме Чевы чевианы пересекаются в одной точке</p><p><strong>Ответ:</strong> да</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (да/нет):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="ch1-answer"><button class="check-btn" onclick="checkAnswer('ch1', 'да')">Проверить</button></div><div class="feedback" id="ch1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 33. ТЕОРЕМА МЕНЕЛАЯ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Теорема Менелая</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №34</span></div>
+                            <div class="task-condition">В треугольнике ABC точки D, E, F лежат на сторонах и делят их в отношениях 2:1, 3:2, 1:3. Лежат ли эти точки на одной прямой?</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('mn1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="mn1"><p><strong>Решение:</strong> (2/1)·(3/2)·(1/3) = 1 ⇒ по теореме Менелая точки лежат на одной прямой</p><p><strong>Ответ:</strong> да</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (да/нет):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="mn1-answer"><button class="check-btn" onclick="checkAnswer('mn1', 'да')">Проверить</button></div><div class="feedback" id="mn1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 34. ФОРМУЛА БРАХМАГУПТЫ -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Формула Брахмагупты</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №35</span></div>
+                            <div class="task-condition">Вписанный четырёхугольник имеет стороны 5, 6, 7, 8. Найдите его площадь.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('br1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="br1"><p><strong>Решение:</strong> p = (5+6+7+8)/2 = 13. S = √((13−5)(13−6)(13−7)(13−8)) = √(8·7·6·5) = √1680 ≈ 40,99</p><p><strong>Ответ:</strong> 40.99</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ (округлите до сотых):</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="br1-answer"><button class="check-btn" onclick="checkAnswer('br1', '40.99')">Проверить</button></div><div class="feedback" id="br1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 35. ОРТОЦЕНТР -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Ортоцентр</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №36</span></div>
+                            <div class="task-condition">В остроугольном треугольнике ABC угол A = 60°, R = 10. Найдите расстояние от вершины A до ортоцентра H.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('or1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="or1"><p><strong>Решение:</strong> AH = 2R·cos A = 2·10·cos 60° = 20·0,5 = 10</p><p><strong>Ответ:</strong> 10</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="or1-answer"><button class="check-btn" onclick="checkAnswer('or1', '10')">Проверить</button></div><div class="feedback" id="or1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 36. ИНЦЕНТР -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Инцентр</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №37</span></div>
+                            <div class="task-condition">В треугольнике ABC угол A = 60°. Найдите угол BIC, где I — инцентр.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('in1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="in1"><p><strong>Решение:</strong> ∠BIC = 90° + A/2 = 90° + 30° = 120°</p><p><strong>Ответ:</strong> 120</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="in1-answer"><button class="check-btn" onclick="checkAnswer('in1', '120')">Проверить</button></div><div class="feedback" id="in1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 37. ОКРУЖНОСТЬ ДЕВЯТИ ТОЧЕК -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Окружность девяти точек</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №38</span></div>
+                            <div class="task-condition">Радиус описанной окружности треугольника равен 12. Найдите радиус окружности девяти точек.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('o9t1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="o9t1"><p><strong>Решение:</strong> R₉ = R/2 = 12/2 = 6</p><p><strong>Ответ:</strong> 6</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="o9t1-answer"><button class="check-btn" onclick="checkAnswer('o9t1', '6')">Проверить</button></div><div class="feedback" id="o9t1-feedback"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 38. ПРЯМАЯ ЭЙЛЕРА -->
+                    <div class="theorem-section-block">
+                        <h2 class="theorem-section-title">🟢 Прямая Эйлера</h2>
+                        <div class="task-card">
+                            <div class="task-header"><span class="task-title">Задача №39</span></div>
+                            <div class="task-condition">В треугольнике расстояние от ортоцентра H до центроида G равно 6. Найдите расстояние от центроида G до центра описанной окружности O.</div>
+                            <div class="task-solution-toggle"><button class="toggle-btn" onclick="toggleSolution('pe1')"><span>▶</span> Показать решение</button></div>
+                            <div class="task-solution" id="pe1"><p><strong>Решение:</strong> HG = 2·GO ⇒ 6 = 2·GO ⇒ GO = 3</p><p><strong>Ответ:</strong> 3</p></div>
+                            <div class="answer-section"><div class="answer-label">Введите ответ:</div><div class="answer-input-wrapper"><input type="text" class="answer-input" id="pe1-answer"><button class="check-btn" onclick="checkAnswer('pe1', '3')">Проверить</button></div><div class="feedback" id="pe1-feedback"></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="divider-light"></div>
+                <p class="footer-note">Интерактивные задачи по теоремам планиметрии</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <span>© 2026 Теоремы планиметрии. Образовательный проект</span>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            const btn = solution.previousElementSibling.querySelector('.toggle-btn');
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                btn.innerHTML = '<span>▶</span> Показать решение';
+            } else {
+                solution.classList.add('show');
+                btn.innerHTML = '<span>▼</span> Скрыть решение';
+            }
+        }
+        
+        function checkAnswer(taskId, correctAnswer) {
+            const input = document.getElementById(taskId + '-answer');
+            const feedback = document.getElementById(taskId + '-feedback');
+            const userAnswer = input.value.trim().toLowerCase();
+            const correct = correctAnswer.toLowerCase();
+            
+            let isCorrect = false;
+            if (correct.includes(',')) {
+                const userParts = userAnswer.split(',').map(s => s.trim()).join(', ');
+                const correctParts = correct.split(',').map(s => s.trim()).join(', ');
+                isCorrect = userParts === correctParts;
+            } else {
+                isCorrect = userAnswer === correct;
+            }
+            
+            feedback.classList.remove('correct', 'incorrect');
+            feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
+            
+            if (isCorrect) {
+                feedback.innerHTML = '✅ Правильно!';
+            } else {
+                feedback.innerHTML = `❌ Неверно. Правильный ответ: <span class="correct-answer">${correctAnswer}</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
